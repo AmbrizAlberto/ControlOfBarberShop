@@ -1,8 +1,5 @@
 // src/app/api/citas/route.js
 
-
-// src/app/api/citas/route.js
-
 import { NextResponse } from 'next/server';
 import prisma from '../../../libs/db';
 
@@ -50,6 +47,17 @@ export async function POST(request) {
 
     const endDate = new Date(startDate);
     endDate.setMinutes(endDate.getMinutes() + duration);
+
+    // Validación de horario laboral (17:00 - 20:30)
+    const startBusinessHours = new Date(startDate);
+    startBusinessHours.setHours(17, 0, 0); // 17:00
+
+    const endBusinessHours = new Date(startDate);
+    endBusinessHours.setHours(20, 30, 0); // 20:30
+
+    if (startDate < startBusinessHours || endDate > endBusinessHours) {
+      return NextResponse.json({ error: 'Horario no disponible' }, { status: 400 });
+    }
 
     const overlappingAppointments = await prisma.cita.findMany({
       where: {
