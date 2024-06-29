@@ -1,5 +1,8 @@
 // src/app/api/citas/route.js
 
+
+// src/app/api/citas/route.js
+
 import { NextResponse } from 'next/server';
 import prisma from '../../../libs/db';
 
@@ -50,19 +53,9 @@ export async function POST(request) {
 
     const overlappingAppointments = await prisma.cita.findMany({
       where: {
-        OR: [
-          {
-            date: {
-              gte: startDate,
-              lt: endDate,
-            },
-          },
-          {
-            date: {
-              lt: startDate,
-              gt: endDate,
-            },
-          },
+        AND: [
+          { date: { gte: startDate } },
+          { date: { lt: endDate } },
         ],
       },
     });
