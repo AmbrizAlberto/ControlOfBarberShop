@@ -12,7 +12,7 @@ function ClientView() {
   const [time, setTime] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [availableTimes, setAvailableTimes] = useState(['17:00', '17:30', '18:00', '18:30', '19:00']);
+  const [availableTimes, setAvailableTimes] = useState(['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30']);
 
   useEffect(() => {
     const fetchCitas = async () => {
@@ -21,9 +21,25 @@ function ClientView() {
         const citas = await res.json();
         const citasOnSelectedDate = citas.filter(cita => new Date(cita.date).toDateString() === new Date(date).toDateString());
 
-        // Logic to exclude already booked times
-        const bookedTimes = citasOnSelectedDate.map(cita => cita.time);
-        setAvailableTimes(['17:00', '17:30', '18:00', '18:30', '19:00'].filter(time => !bookedTimes.includes(time)));
+        const bookedTimes = citasOnSelectedDate.map(cita => {
+          const startTime = new Date(cita.date).toTimeString().substring(0, 5);
+          const endTime = new Date(new Date(cita.date).getTime() + cita.duration * 60000).toTimeString().substring(0, 5);
+          return { startTime, endTime };
+        });
+
+        const allTimes = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30'];
+        const availableTimes = allTimes.filter(time => {
+          const [hours, minutes] = time.split(':').map(Number);
+          const timeDate = new Date(new Date(date).setHours(hours, minutes));
+
+          return !bookedTimes.some(({ startTime, endTime }) => {
+            const startTimeDate = new Date(new Date(date).setHours(...startTime.split(':').map(Number)));
+            const endTimeDate = new Date(new Date(date).setHours(...endTime.split(':').map(Number)));
+            return timeDate >= startTimeDate && timeDate < endTimeDate;
+          });
+        });
+
+        setAvailableTimes(availableTimes);
       } catch (error) {
         console.error('Error fetching citas:', error);
       }
