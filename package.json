@@ -1,0 +1,29 @@
+{
+  "name": "controlbarber",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.16.1",
+    "axios": "^1.7.2",
+    "next": "14.2.4",
+    "next-transpile-modules": "^10.0.1",
+    "node-fetch": "^3.3.2",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.6.6",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "prisma": "^5.16.1",
+    "style-loader": "^4.0.0"
+  }
+}
