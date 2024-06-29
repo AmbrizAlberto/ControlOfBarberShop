@@ -1,5 +1,4 @@
 // src/app/page.jsx
-
 'use client'
 
 import React, { useState, useEffect } from 'react';
@@ -12,7 +11,7 @@ function ClientView() {
   const [time, setTime] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [availableTimes, setAvailableTimes] = useState(['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30']);
+  const [availableTimes, setAvailableTimes] = useState([]);
 
   useEffect(() => {
     const fetchCitas = async () => {
@@ -27,7 +26,11 @@ function ClientView() {
           return { startTime, endTime };
         });
 
-        const allTimes = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30'];
+        const allTimes = [
+          '17:00', '17:30', '18:00', '18:30', 
+          '19:00', '19:30', '20:00', '20:30'
+        ];
+
         const availableTimes = allTimes.filter(time => {
           const [hours, minutes] = time.split(':').map(Number);
           const timeDate = new Date(new Date(date).setHours(hours, minutes));
