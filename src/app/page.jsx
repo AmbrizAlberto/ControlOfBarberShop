@@ -1,8 +1,8 @@
-// srcapp/page.jsx
+// src/app/page.jsx
 
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function ClientView() {
   const [clientName, setClientName] = useState('');
@@ -11,6 +11,28 @@ function ClientView() {
   const [specificServices, setSpecificServices] = useState([]);
   const [time, setTime] = useState('');
   const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [availableTimes, setAvailableTimes] = useState(['17:00', '17:30', '18:00', '18:30', '19:00']);
+
+  useEffect(() => {
+    const fetchCitas = async () => {
+      try {
+        const res = await fetch('/api/citas');
+        const citas = await res.json();
+        const citasOnSelectedDate = citas.filter(cita => new Date(cita.date).toDateString() === new Date(date).toDateString());
+
+        // Logic to exclude already booked times
+        const bookedTimes = citasOnSelectedDate.map(cita => cita.time);
+        setAvailableTimes(['17:00', '17:30', '18:00', '18:30', '19:00'].filter(time => !bookedTimes.includes(time)));
+      } catch (error) {
+        console.error('Error fetching citas:', error);
+      }
+    };
+
+    if (date) {
+      fetchCitas();
+    }
+  }, [date]);
 
   const handleServiceChange = (e) => {
     const selectedService = e.target.value;
@@ -35,6 +57,7 @@ function ClientView() {
   };
 
   const handleSubmit = async () => {
+    setError('');
     try {
       const newAppointment = {
         clientName,
@@ -44,9 +67,9 @@ function ClientView() {
         time,
         message,
       };
-  
+
       console.log('Enviando solicitud POST a la api con los siguientes datos:', newAppointment);
-  
+
       const res = await fetch('/api/citas', {
         method: 'POST',
         body: JSON.stringify(newAppointment),
@@ -54,23 +77,27 @@ function ClientView() {
           'Content-Type': 'application/json',
         },
       });
-  
+
       if (!res.ok) {
-        throw new Error('Error al crear la cita');
+        const errorData = await res.json();
+        throw new Error(errorData.error || 'Error al crear la cita');
       }
-  
+
       const data = await res.json();
       console.log('Respuesta del servidor:', data);
     } catch (error) {
+      setError(error.message);
       console.error('Error al crear la cita:', error);
     }
   };
-  
-  
+
+  const today = new Date().toISOString().split('T')[0];
 
   return (
     <div className="client-view">
       <h1>Agenda tu cita</h1>
+
+      {error && <p style={{ color: 'red' }}>{error}</p>}
 
       <div className="">
         Tu nombre:
@@ -79,7 +106,7 @@ function ClientView() {
 
       <div className="fecha">
         <label>Selecciona el día de la cita:</label>
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} min={today} />
       </div>
 
       <div className="selectores">
@@ -126,8 +153,8 @@ function ClientView() {
                 <label>Selecciona el tipo de depilación</label>
                 <br />
                 <label>
-                  <input type="checkbox" value="bigote" onChange={handleSpecificServiceChange} checked={specificServices.includes('bigote')} />
-                  Depilación de Bigote
+                  <input type="checkbox" value="barba" onChange={handleSpecificServiceChange} checked={specificServices.includes('barba')} />
+                  Depilación de Barba
                 </label>
                 <br />
                 <label>
@@ -155,24 +182,17 @@ function ClientView() {
         <label>Selecciona la hora:</label>
         <select onChange={handleTimeChange} value={time}>
           <option value="">--Seleccionar--</option>
-          <option value="17:00">17:00</option>
-          <option value="17:30">17:30</option>
-          <option value="18:00">18:00</option>
-          <option value="18:30">18:30</option>
-          <option value="19:00">19:00</option>
-          <option value="19:30">19:30</option>
-          <option value="20:00">20:00</option>
-          <option value="20:30">20:30</option>
+          {availableTimes.map((timeOption) => (
+            <option key={timeOption} value={timeOption}>{timeOption}</option>
+          ))}
         </select>
       </div>
 
-      <div>
-        <input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Mensaje" />
+      <div className="mensaje">
+        <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Mensaje adicional" />
       </div>
 
-      <div className="button">
-        <button onClick={handleSubmit}>Agendar</button>
-      </div>
+      <button onClick={handleSubmit}>Enviar</button>
     </div>
   );
 }
