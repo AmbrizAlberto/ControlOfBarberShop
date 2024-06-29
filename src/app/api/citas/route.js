@@ -19,33 +19,67 @@ export async function POST(request) {
 
     console.log('Datos recibidos route.js:', { clientName, date, services, specificServices, time, message });
 
-    // Lógica para calcular la duración basada en los servicios y servicios específicos
     let duration = 0;
     if (services.includes('corte')) {
       if (specificServices.includes('fade')) {
-        duration += 30; // Por ejemplo, 30 minutos para un fade
+        duration += 30;
       } else {
-        duration += 20; // Otro tipo de corte, por ejemplo
+        duration += 20;
       }
     }
-    if (services.includes('depilación')) {
-      duration += 40; // Por ejemplo, 40 minutos para una depilación
+    if (services.includes('depilacion')) {
+      if (specificServices.includes('barba')) {
+        duration += 15;
+      }
+      if (specificServices.includes('piernas')) {
+        duration += 20;
+      }
+      duration += 10;
     }
 
-    // Verifica si la duración es válida
     if (duration === 0) {
       throw new Error('Duración inválida para los servicios seleccionados');
+    }
+
+    const startDate = new Date(date);
+    const [hours, minutes] = time.split(':').map(Number);
+    startDate.setHours(hours, minutes);
+
+    const endDate = new Date(startDate);
+    endDate.setMinutes(endDate.getMinutes() + duration);
+
+    const overlappingAppointments = await prisma.cita.findMany({
+      where: {
+        OR: [
+          {
+            date: {
+              gte: startDate,
+              lt: endDate,
+            },
+          },
+          {
+            date: {
+              lt: startDate,
+              gt: endDate,
+            },
+          },
+        ],
+      },
+    });
+
+    if (overlappingAppointments.length > 0) {
+      return NextResponse.json({ error: 'Horario no disponible' }, { status: 400 });
     }
 
     const newAppointment = await prisma.cita.create({
       data: {
         clientName,
-        date: new Date(date),
+        date: startDate,
         services: { set: services },
         specificServices: { set: specificServices },
         time,
         message,
-        duration, // Añadir la duración calculada
+        duration,
       },
     });
 
