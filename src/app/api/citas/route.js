@@ -1,5 +1,4 @@
 // src/app/api/citas/route.js
-
 import { NextResponse } from 'next/server';
 import prisma from '../../../libs/db';
 
@@ -19,6 +18,7 @@ export async function POST(request) {
 
     console.log('Datos recibidos route.js:', { clientName, date, services, specificServices, time, message });
 
+    // Calcular la duración de la cita basada en los servicios seleccionados
     let duration = 0;
     if (services.includes('corte')) {
       if (specificServices.includes('fade')) {
@@ -37,10 +37,12 @@ export async function POST(request) {
       duration += 10;
     }
 
+    // Validar que la duración sea válida
     if (duration === 0) {
       throw new Error('Duración inválida para los servicios seleccionados');
     }
 
+    // Calcular fecha y hora de inicio y fin de la cita
     const startDate = new Date(date);
     const [hours, minutes] = time.split(':').map(Number);
     startDate.setHours(hours, minutes);
@@ -48,23 +50,24 @@ export async function POST(request) {
     const endDate = new Date(startDate);
     endDate.setMinutes(endDate.getMinutes() + duration);
 
-    // Validación de horario laboral (17:00 - 20:30)
+    // Validar que la cita esté dentro del horario laboral (17:00 - 21:00)
     const startBusinessHours = new Date(startDate);
     startBusinessHours.setHours(17, 0, 0); // 17:00
 
     const endBusinessHours = new Date(startDate);
-    endBusinessHours.setHours(20, 30, 0); // 20:30
+    endBusinessHours.setHours(21, 0, 0); // 21:00
 
     if (startDate < startBusinessHours || endDate > endBusinessHours) {
       return NextResponse.json({ error: 'Horario no disponible' }, { status: 400 });
     }
 
+    // Verificar si hay citas solapadas
     const overlappingAppointments = await prisma.cita.findMany({
       where: {
-        AND: [
-          { date: { gte: startDate } },
-          { date: { lt: endDate } },
-        ],
+        date: {
+          gte: new Date(startDate),
+          lt: new Date(endDate),
+        },
       },
     });
 
@@ -72,6 +75,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Horario no disponible' }, { status: 400 });
     }
 
+    // Crear la nueva cita en la base de datos
     const newAppointment = await prisma.cita.create({
       data: {
         clientName,
@@ -87,6 +91,6 @@ export async function POST(request) {
     return NextResponse.json(newAppointment);
   } catch (error) {
     console.error('Error creando la cita:', error);
-    return NextResponse.json({ error: 'Error interno del servidor' }, { status: 500 });
+    return NextResponse.json({ error: 'Prueba recargar la pagina ó selecciona otra fecha u horario' }, { status: 500 });
   }
 }
