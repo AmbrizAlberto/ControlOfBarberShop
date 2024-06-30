@@ -1,0 +1,39 @@
+/* CHECKBOX */
+.custom-checkbox {
+    display: none;
+}
+
+/* texto al lado del checkbox */
+.custom-checkbox + .custom-checkbox-label {
+    color: #525252;
+    margin-left: 1vh;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 3vh;
+}
+
+/* checkbox cuadros */  
+.custom-checkbox + .custom-checkbox-label:before {
+    margin-left: -1vh;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3vh;
+    height: 3vh;
+    border: 1px solid #0000007f;
+    background: #ffffff85;
+    border-radius: 1vh;
+}
+  
+/* checkbox cuadros activos*/  
+.custom-checkbox:checked + .custom-checkbox-label:before {
+    content: '\2713';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vh;
+    color: #fff;
+    background: #688cd4;
+}

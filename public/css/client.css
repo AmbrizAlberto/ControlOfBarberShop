@@ -31,20 +31,6 @@ p{
     margin: 1vh;
 }
 
-input{
-    background-color: rgba(0, 0, 0, 0.173);
-    padding: 1vh;
-    border: 1px solid rgba(0, 0, 0, 0.407);
-    border-radius: 1.5vh;
-}
-
-textarea{
-    background-color: rgba(0, 0, 0, 0.173);
-    padding: 1vh;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 2vh;
-}
-
 .fecha{
     margin-top: 3vh;
 }
@@ -62,4 +48,36 @@ textarea{
 
 .mensaje{
     margin-top: 3vh;
+}
+
+select, textarea, input{
+    font-size: 2vh;
+    background-color: rgba(0, 0, 0, 0.092);
+    padding: 1vh;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 2vh;
+}
+
+button{
+    width: 20vh;
+    padding: 2vh;
+    background-color: rgba(0, 157, 255, 0.445);
+    font-size: 2vh;
+    color: black;
+    border-radius: 2vh;
+    border: .3vh solid rgba(0, 0, 0, 0.322);
+}
+
+.selectores{
+    background-color: black;
+    color: white;
+    border-radius: 2vh;
+    padding: 2vh;
+}
+
+.specific-service{
+    background-color: black;
+    color: white;
+    border-radius: 2vh;
+    padding: 2vh;
 }
