@@ -12,7 +12,6 @@ html{
     margin: auto;
     width: 90%;
     height: 10vh;
-    border: 1px solid yellow;
     position: relative;
     border-radius: 3vh;
     background-color: rgb(187, 187, 187);
@@ -21,22 +20,28 @@ html{
 
 .header .logo{
     width: 30%;
-    border: 2px solid blue;
 }
 .header img{
     display: flex;
     margin: auto;
     margin-right: 2%;
     height: 9vh;
-    border: 1px solid salmon;
 }
 
 .header .salon{
     width: 80%;
-    border: 1px solid red;
     font-size: 5vh;
     font-weight: bold;
     align-self: center;
+}
+
+.news{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    align-items: center;
+    align-self: center;
+    text-align: center;
 }
 
 .client-view{
