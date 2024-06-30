@@ -8,18 +8,37 @@ html{
 }
 
 .header{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    height: 10vh;
+    border: 1px solid yellow;
+    position: relative;
     border-radius: 3vh;
     background-color: rgb(187, 187, 187);
-    height: 10vh;
+    padding: 2vh;
 }
 
-.header img{
-    margin-top: 1.6vh;
-    margin-left: 2vh;
-    margin-bottom: -4vh;
-    width: 7vh;
-    height: 7vh;
+.header .logo{
+    width: 30%;
+    border: 2px solid blue;
 }
+.header img{
+    display: flex;
+    margin: auto;
+    margin-right: 2%;
+    height: 9vh;
+    border: 1px solid salmon;
+}
+
+.header .salon{
+    width: 80%;
+    border: 1px solid red;
+    font-size: 5vh;
+    font-weight: bold;
+    align-self: center;
+}
+
 .client-view{
     margin: auto;
     text-align: center;
