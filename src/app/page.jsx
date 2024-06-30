@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './components/Modal';
 import "../../public/css/client.css"
+import "../../public/css/checkboxclient.css"
 
 function ClientView() {
   const [clientName, setClientName] = useState('');
@@ -184,33 +185,33 @@ function ClientView() {
         <p><label>Selecciona el servicio:</label></p>
         <div className='servicios'>
           <label>
-            <input type="checkbox" value="corte" onChange={handleServiceChange} checked={services.includes('corte')} />
-            Corte
+            <input type="checkbox" className="custom-checkbox" value="corte" onChange={handleServiceChange} checked={services.includes('corte')} />
+            <span className="custom-checkbox-label">Corte</span>
           </label>
           <br />
           <label>
-            <input type="checkbox" value="depilacion" onChange={handleServiceChange} checked={services.includes('depilacion')} />
-            Depilación
+            <input type="checkbox" className="custom-checkbox" value="depilacion" onChange={handleServiceChange} checked={services.includes('depilacion')} />
+            <span className="custom-checkbox-label">Depilación</span>
           </label>
           <br />
           <label>
-            <input type="checkbox" value="tinte" onChange={handleServiceChange} checked={services.includes('tinte')} />
-            Tinte
+            <input type="checkbox" className="custom-checkbox" value="tinte" onChange={handleServiceChange} checked={services.includes('tinte')} />
+            <span className="custom-checkbox-label">Tinte</span>
           </label>
           <br />
           <label>
-            <input type="checkbox" value="rayitos" onChange={handleServiceChange} checked={services.includes('rayitos')} onClick={handleRayitosAlert} />
-            Rayitos
+            <input type="checkbox" className="custom-checkbox" value="rayitos" onChange={handleServiceChange} checked={services.includes('rayitos')} onClick={handleRayitosAlert} />
+            <span className="custom-checkbox-label">Rayitos</span>
           </label>
           <br />
           <label>
-            <input type="checkbox" value="maquillaje" onChange={handleServiceChange} checked={services.includes('maquillaje')} />
-            Maquillaje
+            <input type="checkbox" className="custom-checkbox" value="maquillaje" onChange={handleServiceChange} checked={services.includes('maquillaje')} />
+            <span className="custom-checkbox-label">Maquillaje</span>
           </label>
           <br />
           <label>
-            <input type="checkbox" value="peinado" onChange={handleServiceChange} checked={services.includes('peinado')} />
-            Peinado
+            <input type="checkbox" className="custom-checkbox" value="peinado" onChange={handleServiceChange} checked={services.includes('peinado')} />
+            <span className="custom-checkbox-label">Peinado</span>
           </label>
         </div>
       </div>
@@ -223,13 +224,13 @@ function ClientView() {
                 <label>Selecciona el tipo de corte (elige uno):</label>
                 <br />
                 <label>
-                  <input type="checkbox" value="fade" onChange={handleCorteSpecificServiceChange} checked={specificServices.includes('fade')} />
-                  Corte Fade
+                  <input type="checkbox" className="custom-checkbox" value="fade" onChange={handleCorteSpecificServiceChange} checked={specificServices.includes('fade')} />
+                  <span className="custom-checkbox-label">Corte Fade</span>
                 </label>
                 <br />
                 <label>
-                  <input type="checkbox" value="tradicional" onChange={handleCorteSpecificServiceChange} checked={specificServices.includes('tradicional')} />
-                  Corte Tradicional
+                  <input type="checkbox" className="custom-checkbox" value="tradicional" onChange={handleCorteSpecificServiceChange} checked={specificServices.includes('tradicional')} />
+                  <span className="custom-checkbox-label">Corte Tradicional</span>
                 </label>
                 <br />
               </>
@@ -239,23 +240,23 @@ function ClientView() {
                 <label>Selecciona el tipo de depilación (puedes seleccionar varios):</label>
                 <br />
                 <label>
-                  <input type="checkbox" value="barba" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('barba')} />
-                  Depilación de Barba
+                  <input type="checkbox" className="custom-checkbox" value="barba" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('barba')} />
+                  <span className="custom-checkbox-label">Depilación de Barba</span>
                 </label>
                 <br />
                 <label>
-                  <input type="checkbox" value="ceja" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('ceja')} />
-                  Depilación de Ceja
+                  <input type="checkbox" className="custom-checkbox" value="ceja" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('ceja')} />
+                  <span className="custom-checkbox-label">Depilación de Ceja</span>
                 </label>
                 <br />
                 <label>
-                  <input type="checkbox" value="axila" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('axila')} />
-                  Depilación de Axila
+                  <input type="checkbox" className="custom-checkbox" value="axila" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('axila')} />
+                  <span className="custom-checkbox-label">Depilación de Axila</span>
                 </label>
                 <br />
                 <label>
-                  <input type="checkbox" value="piernas" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('piernas')} />
-                  Depilación de Piernas
+                  <input type="checkbox" className="custom-checkbox" value="piernas" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('piernas')} />
+                  <span className="custom-checkbox-label">Depilación de Piernas</span>
                 </label>
                 <br />
               </>
@@ -265,7 +266,7 @@ function ClientView() {
       )}
 
       <div className="hora">
-        <label>Selecciona la hora:</label>
+        <p><label>Selecciona la hora:</label></p>
         <select onChange={handleTimeChange} value={time}>
           <option value="">--Seleccionar--</option>
           {availableTimes.map((timeOption) => (
@@ -275,7 +276,7 @@ function ClientView() {
       </div>
 
       <div className="mensaje">
-        Mensaje (opcional):  
+        <p>Mensaje (opcional): </p>
         <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Mensaje adicional" />
       </div>
 
