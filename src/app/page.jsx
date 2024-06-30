@@ -164,19 +164,19 @@ function ClientView() {
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      <div className="Name">
-        Tu nombre:
+      <div className="name">
+        <p>Tu nombre:</p>
         <input type="text" value={clientName} onChange={(e) => setClientName(e.target.value)} placeholder="Nombre Completo" />
       </div>
 
       <div className="fecha">
-        <label>Selecciona el día de la cita:</label>
+        <p><label>Selecciona el día de la cita:</label></p>
         <input type="date" value={date} onChange={(e) => setDate(e.target.value)} min={today} />
       </div>
 
       <div className="selectores">
-        <label>Selecciona el servicio:</label>
-        <div>
+        <p><label>Selecciona el servicio:</label></p>
+        <div className='servicios'>
           <label>
             <input type="checkbox" value="corte" onChange={handleServiceChange} checked={services.includes('corte')} />
             Corte
@@ -269,6 +269,7 @@ function ClientView() {
       </div>
 
       <div className="mensaje">
+        Mensaje (opcional):  
         <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Mensaje adicional" />
       </div>
 
