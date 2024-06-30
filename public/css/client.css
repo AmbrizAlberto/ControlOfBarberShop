@@ -7,7 +7,22 @@ html{
     height: 100%;
 }
 
+.header{
+    border-radius: 3vh;
+    background-color: rgb(187, 187, 187);
+    height: 10vh;
+}
+
+.header img{
+    margin-top: 1.6vh;
+    margin-left: 2vh;
+    margin-bottom: -4vh;
+    width: 7vh;
+    height: 7vh;
+}
 .client-view{
+    margin: auto;
+    text-align: center;
     width: 80%;
     background-color: rgb(204, 204, 204);
     border-radius: 3vh;
@@ -20,7 +35,8 @@ html{
 }
 
 h1{
-    color: red;
+    color: rgb(0, 110, 255);
+    text-shadow: 0 0 2px black;
 }
 
 .name{
@@ -36,10 +52,12 @@ p{
 }
 
 .selectores{
+    text-align: left;
     margin-top: 3vh;
 }
 
 .specific-service{
+    text-align: left;
     margin-top: 3vh;
 }
 .hora{
@@ -59,6 +77,7 @@ select, textarea, input{
 }
 
 button{
+    display: flex;
     width: 20vh;
     padding: 2vh;
     background-color: rgba(0, 157, 255, 0.445);
@@ -69,15 +88,17 @@ button{
 }
 
 .selectores{
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.262);
     color: white;
-    border-radius: 2vh;
+    border-radius: 3vh;
     padding: 2vh;
+    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.541);
 }
 
 .specific-service{
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.262);
     color: white;
-    border-radius: 2vh;
+    border-radius: 3vh;
     padding: 2vh;
+    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.541);
 }
