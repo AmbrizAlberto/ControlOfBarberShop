@@ -8,16 +8,15 @@ html{
 }
 
 .client-view{
-    margin: auto;
     width: 80%;
-    text-align: center;
-    align-items: center;
-    align-self: center;
     background-color: rgb(204, 204, 204);
-    font-size: 3vh;
-    font-weight: bold;
     border-radius: 3vh;
     box-shadow: 0 0 3vh rgba(0, 0, 0, 0.622);
+    padding: 2vh;
+    margin: auto;
+    margin-top: 5vh;
+    font-size: 3vh;
+    font-weight: bold;
 }
 
 h1{
