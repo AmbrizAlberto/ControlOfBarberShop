@@ -1,4 +1,5 @@
 // src/app/api/citas/route.js
+
 import { NextResponse } from 'next/server';
 import prisma from '../../../libs/db';
 
@@ -28,13 +29,17 @@ export async function POST(request) {
       }
     }
     if (services.includes('depilacion')) {
-      if (specificServices.includes('barba')) {
-        duration += 15;
-      }
-      if (specificServices.includes('piernas')) {
-        duration += 20;
-      }
-      duration += 10;
+      specificServices.forEach(service => {
+        if (service === 'barba') {
+          duration += 15;
+        } else if (service === 'ceja') {
+          duration += 10;
+        } else if (service === 'axila') {
+          duration += 10;
+        } else if (service === 'piernas') {
+          duration += 20;
+        }
+      });
     }
 
     // Validar que la duración sea válida
@@ -64,10 +69,18 @@ export async function POST(request) {
     // Verificar si hay citas solapadas
     const overlappingAppointments = await prisma.cita.findMany({
       where: {
-        date: {
-          gte: new Date(startDate),
-          lt: new Date(endDate),
-        },
+        AND: [
+          {
+            date: {
+              gte: startDate.toISOString(), // Convertir a ISO string para comparación
+            },
+          },
+          {
+            date: {
+              lt: endDate.toISOString(), // Convertir a ISO string para comparación
+            },
+          },
+        ],
       },
     });
 
@@ -79,7 +92,7 @@ export async function POST(request) {
     const newAppointment = await prisma.cita.create({
       data: {
         clientName,
-        date: startDate,
+        date: startDate.toISOString(), // Guardar como ISO string en la base de datos
         services: { set: services },
         specificServices: { set: specificServices },
         time,
@@ -91,6 +104,6 @@ export async function POST(request) {
     return NextResponse.json(newAppointment);
   } catch (error) {
     console.error('Error creando la cita:', error);
-    return NextResponse.json({ error: 'Prueba recargar la pagina ó selecciona otra fecha u horario' }, { status: 500 });
+    return NextResponse.json({ error: 'Error al crear la cita' }, { status: 500 });
   }
 }

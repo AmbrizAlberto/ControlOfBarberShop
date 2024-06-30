@@ -17,7 +17,5 @@ model cita {
   message          String?
   time             String   // Agregar este campo
   createdAt        DateTime @default(now())
-
-  // Restricción única para cada fecha, servicio y clientName
-  @@unique([date, services, clientName])
 }
+
