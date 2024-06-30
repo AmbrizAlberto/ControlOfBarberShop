@@ -1,9 +1,8 @@
 // src/app/page.jsx
-
-
-'use client'
+'use client';
 
 import React, { useState, useEffect } from 'react';
+import Modal from './components/Modal';
 
 function ClientView() {
   const [clientName, setClientName] = useState('');
@@ -14,6 +13,8 @@ function ClientView() {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [availableTimes, setAvailableTimes] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
 
   useEffect(() => {
     const fetchCitas = async () => {
@@ -29,7 +30,7 @@ function ClientView() {
         });
 
         const allTimes = [
-          '17:00', '17:30', '18:00', '18:30', 
+          '17:00', '17:30', '18:00', '18:30',
           '19:00', '19:30', '20:00', '20:30'
         ];
 
@@ -55,16 +56,18 @@ function ClientView() {
     }
   }, [date]);
 
-  const handleServiceChange = (e) => {
-    const selectedService = e.target.value;
-    if (services.includes(selectedService)) {
-      setServices(services.filter(service => service !== selectedService));
+  const handleCorteSpecificServiceChange = (e) => {
+    const selectedSpecificService = e.target.value;
+    if (selectedSpecificService === 'fade') {
+      setSpecificServices(['fade']);
+    } else if (selectedSpecificService === 'tradicional') {
+      setSpecificServices(['tradicional']);
     } else {
-      setServices([...services, selectedService]);
+      setSpecificServices([]);
     }
   };
 
-  const handleSpecificServiceChange = (e) => {
+  const handleDepilacionSpecificServiceChange = (e) => {
     const selectedSpecificService = e.target.value;
     if (specificServices.includes(selectedSpecificService)) {
       setSpecificServices(specificServices.filter(service => service !== selectedSpecificService));
@@ -73,13 +76,41 @@ function ClientView() {
     }
   };
 
+  const handleServiceChange = (e) => {
+    const selectedService = e.target.value;
+
+    if (services.includes(selectedService)) {
+      setServices(services.filter(service => service !== selectedService));
+      // Al cambiar el servicio, resetea los servicios específicos seleccionados
+      setSpecificServices([]);
+    } else {
+      setServices([...services, selectedService]);
+      // Al cambiar el servicio, no resetea los servicios específicos seleccionados
+    }
+  };
+
   const handleTimeChange = (e) => {
     setTime(e.target.value);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setClientName('');
+    setDate('');
+    setServices([]);
+    setSpecificServices([]);
+    setTime('');
+    setMessage('');
+    window.location.reload(); // Esto debería manejarse de otra forma más elegante en una aplicación real
   };
 
   const handleSubmit = async () => {
     setError('');
     try {
+      if (!clientName || !date || services.length === 0 || !time) {
+        throw new Error('Completa todos los campos');
+      }
+
       const newAppointment = {
         clientName,
         date: new Date(date).toISOString(),
@@ -106,6 +137,9 @@ function ClientView() {
 
       const data = await res.json();
       console.log('Respuesta del servidor:', data);
+
+      setModalMessage('Cita Agendada');
+      setShowModal(true);
     } catch (error) {
       setError(error.message);
       console.error('Error al crear la cita:', error);
@@ -150,20 +184,15 @@ function ClientView() {
           <div>
             {services.includes('corte') && (
               <>
-                <label>Selecciona el tipo de corte</label>
+                <label>Selecciona el tipo de corte (elige uno):</label>
                 <br />
                 <label>
-                  <input type="checkbox" value="fade" onChange={handleSpecificServiceChange} checked={specificServices.includes('fade')} />
+                  <input type="checkbox" value="fade" onChange={handleCorteSpecificServiceChange} checked={specificServices.includes('fade')} />
                   Corte Fade
                 </label>
                 <br />
                 <label>
-                  <input type="checkbox" value="dama" onChange={handleSpecificServiceChange} checked={specificServices.includes('dama')} />
-                  Corte Dama
-                </label>
-                <br />
-                <label>
-                  <input type="checkbox" value="tradicional" onChange={handleSpecificServiceChange} checked={specificServices.includes('tradicional')} />
+                  <input type="checkbox" value="tradicional" onChange={handleCorteSpecificServiceChange} checked={specificServices.includes('tradicional')} />
                   Corte Tradicional
                 </label>
                 <br />
@@ -171,25 +200,25 @@ function ClientView() {
             )}
             {services.includes('depilacion') && (
               <>
-                <label>Selecciona el tipo de depilación</label>
+                <label>Selecciona el tipo de depilación (puedes seleccionar varios):</label>
                 <br />
                 <label>
-                  <input type="checkbox" value="barba" onChange={handleSpecificServiceChange} checked={specificServices.includes('barba')} />
+                  <input type="checkbox" value="barba" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('barba')} />
                   Depilación de Barba
                 </label>
                 <br />
                 <label>
-                  <input type="checkbox" value="ceja" onChange={handleSpecificServiceChange} checked={specificServices.includes('ceja')} />
+                  <input type="checkbox" value="ceja" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('ceja')} />
                   Depilación de Ceja
                 </label>
                 <br />
                 <label>
-                  <input type="checkbox" value="axila" onChange={handleSpecificServiceChange} checked={specificServices.includes('axila')} />
+                  <input type="checkbox" value="axila" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('axila')} />
                   Depilación de Axila
                 </label>
                 <br />
                 <label>
-                  <input type="checkbox" value="piernas" onChange={handleSpecificServiceChange} checked={specificServices.includes('piernas')} />
+                  <input type="checkbox" value="piernas" onChange={handleDepilacionSpecificServiceChange} checked={specificServices.includes('piernas')} />
                   Depilación de Piernas
                 </label>
                 <br />
@@ -214,6 +243,8 @@ function ClientView() {
       </div>
 
       <button onClick={handleSubmit}>Enviar</button>
+
+      <Modal isOpen={showModal} onClose={handleCloseModal} message={modalMessage} />
     </div>
   );
 }
