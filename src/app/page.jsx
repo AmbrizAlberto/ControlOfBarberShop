@@ -1,8 +1,10 @@
 // src/app/page.jsx
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import Modal from './components/Modal';
+import "../../public/css/client.css"
 
 function ClientView() {
   const [clientName, setClientName] = useState('');
@@ -148,8 +150,16 @@ function ClientView() {
 
   const today = new Date().toISOString().split('T')[0];
 
+  // Función para manejar la alerta para el servicio "rayitos"
+  const handleRayitosAlert = () => {
+    if (services.includes('rayitos')) {
+      alert("Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas.");
+    }
+  };
+
   return (
     <div className="client-view">
+      
       <h1>Agenda tu cita</h1>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -175,6 +185,26 @@ function ClientView() {
           <label>
             <input type="checkbox" value="depilacion" onChange={handleServiceChange} checked={services.includes('depilacion')} />
             Depilación
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" value="tinte" onChange={handleServiceChange} checked={services.includes('tinte')} />
+            Tinte
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" value="rayitos" onChange={handleServiceChange} checked={services.includes('rayitos')} onClick={handleRayitosAlert} />
+            Rayitos
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" value="maquillaje" onChange={handleServiceChange} checked={services.includes('maquillaje')} />
+            Maquillaje
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" value="peinado" onChange={handleServiceChange} checked={services.includes('peinado')} />
+            Peinado
           </label>
         </div>
       </div>

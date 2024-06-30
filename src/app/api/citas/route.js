@@ -41,6 +41,38 @@ export async function POST(request) {
         }
       });
     }
+    if (services.includes('tinte')) {
+      duration += 60;
+    }
+    if (services.includes('rayitos')) {
+      duration += 240;
+
+      // Verificar si se seleccionó "rayitos" y la duración excede el horario disponible
+      const startBusinessHours = new Date(date);
+      startBusinessHours.setHours(17, 0, 0); // 17:00
+
+      const endBusinessHours = new Date(date);
+      endBusinessHours.setHours(20, 30, 0); // 20:30
+
+      const startDate = new Date(date);
+      const [hours, minutes] = time.split(':').map(Number);
+      startDate.setHours(hours, minutes);
+
+      const endDate = new Date(startDate);
+      endDate.setMinutes(endDate.getMinutes() + duration);
+
+      if (endDate > endBusinessHours) {
+        return NextResponse.json({
+          error: "Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas."
+        }, { status: 400 });
+      }
+    }
+    if (services.includes('maquillaje')) {
+      duration += 60;
+    }
+    if (services.includes('peinado')) {
+      duration += 60;
+    }
 
     // Validar que la duración sea válida
     if (duration === 0) {
