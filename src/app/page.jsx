@@ -154,6 +154,7 @@ function ClientView() {
   const handleRayitosAlert = () => {
     if (services.includes('rayitos')) {
       alert("Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas.");
+      window.location.reload(); 
     }
   };
 
@@ -162,7 +163,12 @@ function ClientView() {
       
       <h1>Agenda tu cita</h1>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && (
+        <p style={{ color: 'red' }}>{error} Recargando pagina {setTimeout(() => {
+            window.location.reload();
+          }, 5000)} {/* Recargar la página después de 5 segundos */}
+        </p>
+      )}
 
       <div className="name">
         <p>Tu nombre:</p>
