@@ -164,7 +164,7 @@ function ClientView() {
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      <div className="">
+      <div className="Name">
         Tu nombre:
         <input type="text" value={clientName} onChange={(e) => setClientName(e.target.value)} placeholder="Nombre Completo" />
       </div>
