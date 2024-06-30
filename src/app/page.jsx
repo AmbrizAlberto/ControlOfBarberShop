@@ -233,6 +233,7 @@ function ClientView() {
                   <span className="custom-checkbox-label">Corte Tradicional</span>
                 </label>
                 <br />
+                <br />
               </>
             )}
             {services.includes('depilacion') && (
