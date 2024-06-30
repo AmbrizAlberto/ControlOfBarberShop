@@ -5,7 +5,7 @@
 
 /* texto al lado del checkbox */
 .custom-checkbox + .custom-checkbox-label {
-    color: #525252;
+    color: rgba(255, 255, 255, 0.704);
     margin-left: 1vh;
     position: relative;
     padding-left: 30px;
