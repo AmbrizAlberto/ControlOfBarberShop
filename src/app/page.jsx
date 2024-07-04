@@ -178,7 +178,7 @@ function ClientView() {
         <img src={Barberimg} alt="" />
 
         <div className='news'>
-          No hay noticias
+          <h1>No hay noticias</h1>
         </div>
 
         <div className="client-view">
