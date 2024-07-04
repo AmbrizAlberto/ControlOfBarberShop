@@ -4,22 +4,36 @@ html {
     font-family: "Roboto", sans-serif;
     width: 100%;
     height: 100%;
-    background-image: url(https://www.creativefabrica.com/wp-content/uploads/2021/04/26/Barbershop-Seamless-Pattern-Graphics-11345676-1.png);
-    background-size: cover;
+/*     background-image: url(https://www.creativefabrica.com/wp-content/uploads/2021/04/26/Barbershop-Seamless-Pattern-Graphics-11345676-1.png);
+ */    background-size: cover;
     background-position: center;
 }
+
+/* .fondo{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);   
+    z-index: 0;
+    border: .5vh solid black;
+    opacity: .3;
+} */
 
 /* HEADER */
 .header{
     display: flex;
-    margin: auto;
-    margin-top: -1vh;
+    top: 0;
+    left: 0;
     height: 10vh;
     position: relative;
-    background-color: rgba(187, 187, 187, 0.147);
+    background-color: rgba(6, 6, 6, 0.122);
     padding: 2.5vh;
-    backdrop-filter: blur(3vh);
-    border: .5vh solid rgb(255, 0, 0);
+    backdrop-filter: blur(1vh);
 }
 
 .header .logo{
@@ -35,7 +49,6 @@ html {
 
 .header .salon{
     margin: auto;
-    width: 10   0vh;
     text-align: center;
     align-content: center;
     font-size: 5vh;
@@ -46,48 +59,64 @@ html {
 }
 
 /* Main */
-.main{
+.main {
     margin: auto;
-    margin-top: 2vh;
+    margin-top: 4vh;
     width: 90%;
-    height: 120vh;
-    border: 1px solid red;
+    height: auto; /* Cambiado a auto para permitir la expansión dinámica */
+    border: 1px solid black;
     display: flex;
     background-color: rgba(0, 0, 0, 0.193);
-    backdrop-filter: blur(4vh);
+    backdrop-filter: blur(2vh);
+    border-radius: 3vh;
+    box-shadow: 0 0 6vh black;
+    margin-bottom: 5vh;
 }
 
 /* NOTICIAS */
-.news{
+.news {
     width: 50%;
-    height: 100%;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-    border: 1px solid blue;
-    background-image: url(https://cdn.prod.website-files.com/61554cf069663530fc823d21/637e604b3e538d4b36004276_image.webp);
+    height: auto;
+    max-height: 120vh; /* Cambiado a auto para permitir la expansión dinámica */
+    border-radius: 3vh;
+    border: 1px solid yellow;
+    background-image: url(https://i.pinimg.com/474x/e1/cd/54/e1cd54f6cad042af923bc416fc95e052.jpg);
     background-size: cover;
     background-position: center;
 }
 
+.newscont {
+    height: auto; /* Cambiado a auto para permitir la expansión dinámica */
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.newscont h1 {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    font-size: 4vh;
+    margin: 0; /* Asegúrate de que el margen no interfiera con la altura */
+}
+
 /* FORM */
-.client-view{
+.client-view {
+    width: 50%;
+    height: auto;
     margin: auto;
     text-align: center;
-    width: 40%;
-    background-color: rgba(255, 255, 255, 0.501);
-    border-radius: 3vh;
-    box-shadow: 0 0 100px rgb(0, 0, 0);
-    padding: 2vh;
-    margin: auto;
-    margin-top: 5vh;
+    padding: 0 2vh;
     font-size: 3vh;
     font-weight: bold;
-    backdrop-filter: blur(5vh);
-    margin-bottom: 7vh;
-    border: .5vh solid rgba(255, 255, 255, 0.295);
-    border: 1px solid yellow;
+    border: 1px solid red;
+    margin-bottom: 2vh;
+    background-color: rgba(255, 255, 255, 0.516);
 }
+
 
 h1{
     color: rgb(0, 110, 255);
