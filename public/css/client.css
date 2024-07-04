@@ -5,6 +5,8 @@ html{
     background-color: white;
     width: 100%;
     height: 100%;
+    background-image: url(https://scontent.fgdl5-1.fna.fbcdn.net/v/t39.30808-6/239543103_1846704818846855_5260529420270521181_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG260gux0xsUQQMgkb6xlWu2fhLrAd0iYPZ-EusB3SJg1tTF1zcyAn_DyLVddbNP-A8JasRO-uLqhoiFiQyE6vR&_nc_ohc=rwYiy191CIgQ7kNvgEiCBQS&_nc_ht=scontent.fgdl5-1.fna&gid=AJnttfrO-9-GCvgMlFqLyc3&oh=00_AYB1XLkToSGrCNLOCjNKLGdIpKGxW-IWAFxoQIVXtoMgDQ&oe=668BAC79);
+
 }
 
 .header{
@@ -15,10 +17,11 @@ html{
     position: relative;
     border-radius: 3vh;
     background-color: rgb(187, 187, 187);
-    padding: 2vh;
+    padding: 2.5vh;
 }
 
 .header .logo{
+    position: absolute;
     width: 30%;
 }
 .header img{
@@ -29,10 +32,15 @@ html{
 }
 
 .header .salon{
-    width: 80%;
+    margin: auto;
+    width: 10   0vh;
+    text-align: center;
+    align-content: center;
     font-size: 5vh;
     font-weight: bold;
     align-self: center;
+    border: 1px solid red;
+    height: 100% ;
 }
 
 .news{
