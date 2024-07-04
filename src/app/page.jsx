@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from './components/Modal';
 import "../../public/css/client.css"
 import "../../public/css/checkboxclient.css"
+import Barberimg from "../../public/barber.jpg"
 
 function ClientView() {
   const [clientName, setClientName] = useState('');
@@ -174,6 +175,7 @@ function ClientView() {
       </div>
 
       <div className='main'>
+        <img src={Barberimg} alt="" />
 
         <div className='news'>
           No hay noticias
