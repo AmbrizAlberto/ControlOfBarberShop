@@ -46,20 +46,27 @@ html {
 }
 
 /* Main */
-
 .main{
-    width: 100%;
+    margin: auto;
+    margin-top: 2vh;
+    width: 90%;
     border: 1px solid red;
     display: flex;
+    background-color: rgba(0, 0, 0, 0.193);
+    backdrop-filter: blur(4vh);
 }
 
 /* NOTICIAS */
 .news{
     width: 50%;
+    height: 110vh;
     align-items: center;
     align-self: center;
     text-align: center;
     border: 1px solid blue;
+    background-image: url(https://cdn.prod.website-files.com/61554cf069663530fc823d21/637e604b3e538d4b36004276_image.webp);
+    background-size: cover;
+    background-position: center;
 }
 
 /* FORM */
