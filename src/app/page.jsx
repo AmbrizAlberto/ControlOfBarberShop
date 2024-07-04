@@ -164,9 +164,12 @@ function ClientView() {
   return (
     <div >
       <div className='main'>
+        
         <div className='logo'>
-          <img src="https://cdn-icons-png.flaticon.com/512/40/40861.png" alt="" />
+          <img src="https://cdn-icons-png.flaticon.com/512/40/40861.png" alt="" className='blurred' />
+          <img src="https://cdn-icons-png.flaticon.com/512/40/40861.png" alt="" className='original' />
         </div>
+
         <div className='news'>
           <div className='newscont'>
             <h1>No hay noticias</h1>

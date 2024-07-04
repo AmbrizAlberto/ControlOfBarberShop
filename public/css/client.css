@@ -38,16 +38,28 @@ html {
     backdrop-filter: blur(1vh);
 }
 
-.header .logo{
+.logo {
     position: absolute;
-    width: 30%;
-}
-.header img{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48%;
     margin: auto;
-    margin-right: 2%;
-    height: 9vh;
-}
+    border: 1px solid red;
+  }
+  
+  .logo .blurred {
+    position: absolute;
+    height: 20vh;
+    filter: blur(3vh);
+    z-index: 0;
+  }
+  
+  .logo .original {
+    position: relative;
+    height: 20vh;
+    z-index: 1;
+  }
 
 .header .salon{
     margin: auto;
