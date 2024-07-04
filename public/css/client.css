@@ -82,21 +82,27 @@ html {
 .news {
     width: 50%;
     height: auto; /* Cambiado a auto para permitir la expansión dinámica */
-    border-radius: 3vh;
+    border-top-left-radius: 3vh;
+    border-bottom-left-radius: 3vh;
     background-image: url(https://scontent.fgdl5-1.fna.fbcdn.net/v/t39.30808-6/239543103_1846704818846855_5260529420270521181_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG260gux0xsUQQMgkb6xlWu2fhLrAd0iYPZ-EusB3SJg1tTF1zcyAn_DyLVddbNP-A8JasRO-uLqhoiFiQyE6vR&_nc_ohc=rwYiy191CIgQ7kNvgEiCBQS&_nc_ht=scontent.fgdl5-1.fna&gid=AJnttfrO-9-GCvgMlFqLyc3&oh=00_AYB1XLkToSGrCNLOCjNKLGdIpKGxW-IWAFxoQIVXtoMgDQ&oe=668BAC79);
     background-size: cover;
     background-position: center;
+    box-shadow: 4vh 0vh 4vh -1vh rgba(0, 0, 0, 0.318);
+    /*           x    y  blr   t  */
 }
 
 .newscont {
     margin-top: 74.5vh;
+    backdrop-filter: blur(2vh);
+    background-color: rgba(255, 0, 0, 0.149);
     position: absolute;
     display: flex;
-    width: 49%;
-    height: 30%;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 3vh;
+    width: 48.5%;
+    height: 29.5%;
+    border-top-left-radius: 3vh;
+    border-top-right-radius: 3vh;
+    border-bottom-left-radius: 3vh;
+    border: .4vh solid rgba(255, 255, 255, 0.232);
 }
 
 .newscont h1 {
