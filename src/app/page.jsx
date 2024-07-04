@@ -6,7 +6,6 @@ import React, { useState, useEffect } from 'react';
 import Modal from './components/Modal';
 import "../../public/css/client.css"
 import "../../public/css/checkboxclient.css"
-import Barberimg from "../../public/barber.jpg"
 
 function ClientView() {
   const [clientName, setClientName] = useState('');
@@ -51,7 +50,7 @@ function ClientView() {
 
         setAvailableTimes(availableTimes);
       } catch (error) {
-        console.error('Error fetching citas:', error);
+        console.error('Error buscando citas:', error);
       }
     };
 
@@ -114,7 +113,7 @@ function ClientView() {
     setError('');
     try {
       if (!clientName || !date || services.length === 0 || !time) {
-        throw new Error('Completa todos los campos');
+        throw new Error('Por favor, completa todos los campos obligatorios.');
       }
 
       const newAppointment = {
@@ -144,7 +143,7 @@ function ClientView() {
       const data = await res.json();
       console.log('Respuesta del servidor:', data);
 
-      setModalMessage('Cita Agendada');
+      setModalMessage('Tu cita ha sido agendada con éxito.');
       setShowModal(true);
     } catch (error) {
       setError(error.message);
@@ -163,7 +162,9 @@ function ClientView() {
   };
 
   return (
-    <div>
+    <div >
+
+      <div className='fondo'></div>
 
       <div className='header'>
         <div className='logo'>
@@ -175,10 +176,11 @@ function ClientView() {
       </div>
 
       <div className='main'>
-        <img src={Barberimg} alt="" />
 
         <div className='news'>
-          <h1>No hay noticias</h1>
+          <div className='newscont'>
+            <h1>No hay noticias</h1>
+          </div>
         </div>
 
         <div className="client-view">
