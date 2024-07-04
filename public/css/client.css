@@ -13,15 +13,13 @@ html {
 .header{
     display: flex;
     margin: auto;
-    margin-top: 2vh;
-    width: 90%;
+    margin-top: -1vh;
     height: 10vh;
     position: relative;
-    border-radius: 3vh;
     background-color: rgba(187, 187, 187, 0.147);
     padding: 2.5vh;
     backdrop-filter: blur(3vh);
-    border: .5vh solid rgba(255, 255, 255, 0.295);
+    border: .5vh solid rgb(255, 0, 0);
 }
 
 .header .logo{
@@ -47,21 +45,28 @@ html {
     height: 100% ;
 }
 
+/* Main */
+
+.main{
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+}
+
 /* NOTICIAS */
 .news{
-    display: flex;
-    margin: auto;
-    width: 90%;
+    width: 50%;
     align-items: center;
     align-self: center;
     text-align: center;
+    border: 1px solid blue;
 }
 
 /* FORM */
 .client-view{
     margin: auto;
     text-align: center;
-    width: 80%;
+    width: 40%;
     background-color: rgba(255, 255, 255, 0.501);
     border-radius: 3vh;
     box-shadow: 0 0 100px rgb(0, 0, 0);
@@ -73,6 +78,7 @@ html {
     backdrop-filter: blur(5vh);
     margin-bottom: 7vh;
     border: .5vh solid rgba(255, 255, 255, 0.295);
+    border: 1px solid yellow;
 }
 
 h1{

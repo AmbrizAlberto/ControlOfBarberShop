@@ -173,7 +173,7 @@ function ClientView() {
         </div>
       </div>
 
-      <div className='Main'>
+      <div className='main'>
 
         <div className='news'>
           No hay noticias
@@ -309,7 +309,7 @@ function ClientView() {
 
           <Modal isOpen={showModal} onClose={handleCloseModal} message={modalMessage} />
         </div>
-        
+
       </div>
     </div>
     
