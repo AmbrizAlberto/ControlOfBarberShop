@@ -5,8 +5,10 @@ html {
     width: 100%;
     height: 100%;
 /*     background-image: url(https://www.creativefabrica.com/wp-content/uploads/2021/04/26/Barbershop-Seamless-Pattern-Graphics-11345676-1.png);
- */    background-size: cover;
+ */    
+    background-size: cover;
     background-position: center;
+    background-color: white;
 }
 
 /* .fondo{
@@ -61,7 +63,7 @@ html {
 /* Main */
 .main {
     margin: auto;
-    margin-top: 4vh;
+    margin-top: 6vh;
     width: 90%;
     height: auto; /* Cambiado a auto para permitir la expansión dinámica */
     border: 1px solid black;
@@ -76,11 +78,10 @@ html {
 /* NOTICIAS */
 .news {
     width: 50%;
-    height: auto;
-    max-height: 120vh; /* Cambiado a auto para permitir la expansión dinámica */
+    height: auto; /* Cambiado a auto para permitir la expansión dinámica */
     border-radius: 3vh;
     border: 1px solid yellow;
-    background-image: url(https://i.pinimg.com/474x/e1/cd/54/e1cd54f6cad042af923bc416fc95e052.jpg);
+    background-image: url(https://scontent.fgdl5-1.fna.fbcdn.net/v/t39.30808-6/239543103_1846704818846855_5260529420270521181_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG260gux0xsUQQMgkb6xlWu2fhLrAd0iYPZ-EusB3SJg1tTF1zcyAn_DyLVddbNP-A8JasRO-uLqhoiFiQyE6vR&_nc_ohc=rwYiy191CIgQ7kNvgEiCBQS&_nc_ht=scontent.fgdl5-1.fna&gid=AJnttfrO-9-GCvgMlFqLyc3&oh=00_AYB1XLkToSGrCNLOCjNKLGdIpKGxW-IWAFxoQIVXtoMgDQ&oe=668BAC79);
     background-size: cover;
     background-position: center;
 }
@@ -94,11 +95,6 @@ html {
 }
 
 .newscont h1 {
-    display: flex;
-    margin: auto;
-    align-items: center;
-    align-self: center;
-    text-align: center;
     font-size: 4vh;
     margin: 0; /* Asegúrate de que el margen no interfiera con la altura */
 }
@@ -114,8 +110,8 @@ html {
     font-weight: bold;
     border: 1px solid red;
     margin-bottom: 2vh;
-    background-color: rgba(255, 255, 255, 0.516);
 }
+
 
 
 h1{

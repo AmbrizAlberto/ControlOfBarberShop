@@ -163,20 +163,10 @@ function ClientView() {
 
   return (
     <div >
-
-      <div className='fondo'></div>
-
-      <div className='header'>
+      <div className='main'>
         <div className='logo'>
           <img src="https://cdn-icons-png.flaticon.com/512/40/40861.png" alt="" />
         </div>
-        <div className='salon'>
-          Salon de Belleza Matiz
-        </div>
-      </div>
-
-      <div className='main'>
-
         <div className='news'>
           <div className='newscont'>
             <h1>No hay noticias</h1>
@@ -188,9 +178,9 @@ function ClientView() {
           <h1>Agenda tu cita</h1>
 
           {error && (
-            <p style={{ color: 'red' }}>{error} Recargando pagina {setTimeout(() => {
+            <p style={{ color: 'red', marginTop: 2, marginBottom: 5 }}>{error} Recargando pagina Error. {setTimeout(() => {
                 window.location.reload();
-              }, 5000)} {/* Recargar la página después de 5 segundos */}
+              }, 5000)}
             </p>
           )}
 
