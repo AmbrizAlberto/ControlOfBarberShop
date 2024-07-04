@@ -291,7 +291,7 @@ function ClientView() {
         <div className="hora">
           <p><label>Selecciona la hora:</label></p>
           <select onChange={handleTimeChange} value={time}>
-            <option value="">--Seleccionar--</option>
+            <option value="">--Seleccionar --</option>
             {availableTimes.map((timeOption) => (
               <option key={timeOption} value={timeOption}>{timeOption}</option>
             ))}
