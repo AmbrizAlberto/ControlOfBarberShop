@@ -3,28 +3,12 @@
 html {
     font-family: "Roboto", sans-serif;
     width: 100%;
-    height: 100%;
-/*     background-image: url(https://www.creativefabrica.com/wp-content/uploads/2021/04/26/Barbershop-Seamless-Pattern-Graphics-11345676-1.png);
- */    
+    height: 100%; 
     background-size: cover;
     background-position: center;
     background-color: white;
 }
 
-/* .fondo{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: rgb(0, 0, 0);   
-    z-index: 0;
-    border: .5vh solid black;
-    opacity: .3;
-} */
 
 /* HEADER */
 .header{
@@ -45,13 +29,13 @@ html {
     align-items: center;
     width: 48%;
     margin: auto;
-    border: 1px solid red;
+    margin-top: 3vh;
   }
   
   .logo .blurred {
     position: absolute;
     height: 20vh;
-    filter: blur(3vh);
+    filter: blur(2vh);
     z-index: 0;
   }
   
@@ -59,17 +43,24 @@ html {
     position: relative;
     height: 20vh;
     z-index: 1;
+    filter: invert();
   }
 
-.header .salon{
+.barbername{
+    position: absolute;
+    display: flex;
+    width: 49%;
     margin: auto;
-    text-align: center;
-    align-content: center;
-    font-size: 5vh;
+}
+
+.barbername h1{
+    margin-top: 25vh;
+    padding: 0 4%;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-size: 10vh;
+    text-shadow: 0 0 3vh rgb(44, 202, 255);
     font-weight: bold;
-    align-self: center;
-    border: 1px solid red;
-    height: 100% ;
 }
 
 /* Main */
@@ -92,23 +83,25 @@ html {
     width: 50%;
     height: auto; /* Cambiado a auto para permitir la expansión dinámica */
     border-radius: 3vh;
-    border: 1px solid yellow;
     background-image: url(https://scontent.fgdl5-1.fna.fbcdn.net/v/t39.30808-6/239543103_1846704818846855_5260529420270521181_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG260gux0xsUQQMgkb6xlWu2fhLrAd0iYPZ-EusB3SJg1tTF1zcyAn_DyLVddbNP-A8JasRO-uLqhoiFiQyE6vR&_nc_ohc=rwYiy191CIgQ7kNvgEiCBQS&_nc_ht=scontent.fgdl5-1.fna&gid=AJnttfrO-9-GCvgMlFqLyc3&oh=00_AYB1XLkToSGrCNLOCjNKLGdIpKGxW-IWAFxoQIVXtoMgDQ&oe=668BAC79);
     background-size: cover;
     background-position: center;
 }
 
 .newscont {
-    height: auto; /* Cambiado a auto para permitir la expansión dinámica */
-    border: 1px solid blue;
+    margin-top: 74.5vh;
+    position: absolute;
     display: flex;
+    width: 49%;
+    height: 30%;
     flex-direction: column;
     justify-content: center;
+    border-radius: 3vh;
 }
 
 .newscont h1 {
     font-size: 4vh;
-    margin: 0; /* Asegúrate de que el margen no interfiera con la altura */
+    margin: 0; 
 }
 
 /* FORM */
@@ -120,13 +113,12 @@ html {
     padding: 0 2vh;
     font-size: 3vh;
     font-weight: bold;
-    border: 1px solid red;
     margin-bottom: 2vh;
 }
 
 
 
-h1{
+.client-view h1{
     color: rgb(0, 110, 255);
     text-shadow: 0 0 2px black;
 }

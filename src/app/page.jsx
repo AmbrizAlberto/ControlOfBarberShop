@@ -170,6 +170,10 @@ function ClientView() {
           <img src="https://cdn-icons-png.flaticon.com/512/40/40861.png" alt="" className='original' />
         </div>
 
+        <div className='barbername'>
+          <h1>SALA DE BELLEZA MATIZ</h1>
+        </div>
+
         <div className='news'>
           <div className='newscont'>
             <h1>No hay noticias</h1>
