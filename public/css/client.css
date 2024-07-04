@@ -9,19 +9,7 @@ html {
     background-color: white;
 }
 
-
-/* HEADER */
-.header{
-    display: flex;
-    top: 0;
-    left: 0;
-    height: 10vh;
-    position: relative;
-    background-color: rgba(6, 6, 6, 0.122);
-    padding: 2.5vh;
-    backdrop-filter: blur(1vh);
-}
-
+/* Logo */
 .logo {
     position: absolute;
     display: flex;
@@ -46,6 +34,7 @@ html {
     filter: invert();
   }
 
+/* Name */
 .barbername{
     position: absolute;
     display: flex;
@@ -97,8 +86,8 @@ html {
     background-color: rgba(255, 0, 0, 0.149);
     position: absolute;
     display: flex;
-    width: 48.5%;
-    height: 29.5%;
+    width: 84.1vh;
+    height: 33.5vh;
     border-top-left-radius: 3vh;
     border-top-right-radius: 3vh;
     border-bottom-left-radius: 3vh;
@@ -112,7 +101,7 @@ html {
 
 /* FORM */
 .client-view {
-    width: 50%;
+    width: 40%;
     height: auto;
     margin: auto;
     text-align: center;
@@ -168,6 +157,8 @@ select, textarea, input{
 
 button{
     display: flex;
+    margin: auto;
+    margin-top: 2vh;
     width: 20vh;
     padding: 2vh;
     background-color: rgba(0, 157, 255, 0.445);
@@ -175,6 +166,8 @@ button{
     color: black;
     border-radius: 2vh;
     border: .3vh solid rgba(0, 0, 0, 0.322);
+    justify-content: center;
+    font-weight: bold;
 }
 
 .selectores{
