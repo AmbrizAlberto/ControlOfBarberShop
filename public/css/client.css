@@ -89,10 +89,8 @@ html {
     padding: 2vh;
     backdrop-filter: blur(2vh);
     background-color: rgba(255, 0, 0, 0.149);
-    border-top-left-radius: 3vh;
-    border-top-right-radius: 3vh;
-    border-bottom-left-radius: 3vh;
-    border: .4vh solid rgba(255, 255, 255, 0.232);
+    border-radius: 3vh;
+    border: .4vh solid rgba(255, 0, 0, 0.533);
 }
 
 .newscont h1 {
