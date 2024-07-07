@@ -83,7 +83,10 @@ html {
 .newscont {
     position: relative;
     display: flex;
-    margin-top: 74.5vh;
+    margin: auto;
+    margin-top: 5vh;
+    width: 80%;
+    padding: 2vh;
     backdrop-filter: blur(2vh);
     background-color: rgba(255, 0, 0, 0.149);
     border-top-left-radius: 3vh;
