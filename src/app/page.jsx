@@ -86,11 +86,16 @@ function ClientView() {
 
     if (services.includes(selectedService)) {
       setServices(services.filter(service => service !== selectedService));
-      // Al cambiar el servicio, resetea los servicios específicos seleccionados
       setSpecificServices([]);
     } else {
+      if (selectedService === 'rayitos') {
+        alert("Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas. Tel. 315 100 12 42");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+        return;
+      }
       setServices([...services, selectedService]);
-      // Al cambiar el servicio, no resetea los servicios específicos seleccionados
     }
   };
 
