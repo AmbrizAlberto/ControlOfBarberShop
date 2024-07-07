@@ -175,9 +175,6 @@ function ClientView() {
         </div>
 
         <div className='news'>
-          <div className='newscont'>
-            <h1>No hay noticias</h1>
-          </div>
         </div>
 
         <div className="client-view">
