@@ -163,6 +163,10 @@ function ClientView() {
 
   return (
     <div >
+
+    <div className='newscont'>
+      No hay noticias
+    </div>
       <div className='main'>
         
         <div className='logo'>
