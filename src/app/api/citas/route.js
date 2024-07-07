@@ -63,7 +63,7 @@ export async function POST(request) {
 
       if (endDate > endBusinessHours) {
         return NextResponse.json({
-          error: "Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas. " + "315 100 12 42"
+          error: "Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas. Tel. 315 100 12 42"
         });
       }
     }
