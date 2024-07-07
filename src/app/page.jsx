@@ -183,7 +183,7 @@ function ClientView() {
           <h1>SALA DE BELLEZA MATIZ</h1>
         </div>
 
-        <div className='news'>
+        <div className='rightside'>
         </div>
 
         <div className="client-view">

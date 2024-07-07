@@ -68,7 +68,7 @@ html {
 }
 
 /* NOTICIAS */
-.news {
+.rightside {
     width: 50%;
     height: auto; /* Cambiado a auto para permitir la expansión dinámica */
     border-top-left-radius: 3vh;
@@ -95,6 +95,7 @@ html {
 
 .newscont h1 {
     font-size: 4vh;
+    font-weight: bold;
     margin: 0; 
 }
 
