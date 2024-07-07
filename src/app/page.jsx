@@ -156,7 +156,8 @@ function ClientView() {
   // Función para manejar la alerta para el servicio "rayitos"
   const handleRayitosAlert = () => {
     if (services.includes('rayitos')) {
-      alert("Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas.");
+      alert("Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas.", 
+     "Tel. 315 100 12 42");
       window.location.reload(); 
     }
   };
