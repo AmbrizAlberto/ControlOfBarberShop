@@ -170,7 +170,7 @@ function ClientView() {
     <div >
 
     <div className='newscont'>
-      No hay noticias
+      <h1>No hay noticias</h1>
     </div>
       <div className='main'>
         
