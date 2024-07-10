@@ -1,5 +1,3 @@
-/* public/css/modal.css */
-
 @keyframes modalFadeIn {
     from {
       opacity: 0;
@@ -11,7 +9,7 @@
     }
   }
   
-.modal {
+  .modal {
     position: fixed; /* Cambiado de absolute a fixed */
     top: 0;
     left: 0;
@@ -21,14 +19,18 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.421);
     backdrop-filter: blur(3vh);
     transition: 500ms;
     color: black;
-    overflow: hidden; /* Cambiado de none a hidden */
   }
   
   .modal-content {
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
     background-color: white;
     width: 50%;
     padding: 2vh;
@@ -37,9 +39,6 @@
     transition: 500ms;
     color: black;
     box-shadow: 0 0 4vh black;
-    animation: modalFadeIn 0.5s ease-out; /* Aplicar la animación */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Asegurarse de que el contenido esté centrado */
+    animation: modalFadeIn 0.5s ease-out;
   }
   
