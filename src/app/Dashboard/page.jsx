@@ -40,6 +40,7 @@ function Dashboard() {
   }, []);
 
   return (
+    <html>
     <div className='main'>
       <Modal
         show={showModal}
@@ -93,6 +94,7 @@ function Dashboard() {
         </div>
       </div>
     </div>
+    </html>
   );
 }
 
