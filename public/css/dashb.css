@@ -5,6 +5,7 @@ html{
   height: 100%;
   font-family: "Roboto", sans-serif;
   background-color: white;
+  border: 5px solid red;
 }
 
 /* Main */
@@ -12,7 +13,7 @@ html{
     margin: auto;
     margin-top: 6vh;
     width: 90%;
-    height: auto; /* Cambiado a auto para permitir la expansión dinámica */
+    height: 100%;
     border: 1px solid black;
     display: flex;
     background-color: rgba(0, 0, 0, 0.193);
