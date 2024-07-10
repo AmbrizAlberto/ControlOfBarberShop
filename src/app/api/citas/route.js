@@ -139,3 +139,16 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Error al crear la cita' }, { status: 500 });
   }
 }
+
+export async function DELETE(request) {
+  try {
+    const id = request.url.split('/').pop();
+    await prisma.cita.delete({
+      where: { id: parseInt(id) },
+    });
+    return NextResponse.json({ message: 'Cita eliminada exitosamente' });
+  } catch (error) {
+    console.error('Error eliminando la cita:', error);
+    return NextResponse.json({ error: 'Error interno del Servidor' }, { status: 500 });
+  }
+}

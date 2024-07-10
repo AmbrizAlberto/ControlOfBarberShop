@@ -22,21 +22,34 @@ html{
     margin-bottom: 10vh;
 }
 
-/* NOTICIAS */
+/* IZQUIERDA */
 .Left {
-    width: 40%;
+    width: 30%;
     height: auto; /* Cambiado a auto para permitir la expansión dinámica */
     border-top-left-radius: 3vh;
     border-bottom-left-radius: 3vh;
-    background-image: url(https://scontent.fgdl5-1.fna.fbcdn.net/v/t39.30808-6/239543103_1846704818846855_5260529420270521181_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG260gux0xsUQQMgkb6xlWu2fhLrAd0iYPZ-EusB3SJg1tTF1zcyAn_DyLVddbNP-A8JasRO-uLqhoiFiQyE6vR&_nc_ohc=rwYiy191CIgQ7kNvgEiCBQS&_nc_ht=scontent.fgdl5-1.fna&gid=AJnttfrO-9-GCvgMlFqLyc3&oh=00_AYB1XLkToSGrCNLOCjNKLGdIpKGxW-IWAFxoQIVXtoMgDQ&oe=668BAC79);
     background-size: cover;
     background-position: center;
     box-shadow: 4vh 0vh 4vh -1vh rgba(0, 0, 0, 0.318);
     /*           x    y  blr   t  */
 }
 
+.NewsCreat{
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.NewsCreat h1{
+    display: flex;
+    margin: auto;
+    margin-top: 3vh;
+    text-align: center;
+}
+
+/* DERECHA */
 .Right{
-    width: 55%;
+    width: 65%;
     height: auto;
     margin: auto;
     text-align: center;
