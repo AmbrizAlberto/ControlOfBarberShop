@@ -142,7 +142,7 @@ export async function POST(request) {
 
 export async function DELETE(request) {
   try {
-    const id = request.url.split('/').pop();
+    const { id } = request.params;
     await prisma.cita.delete({
       where: { id: parseInt(id) },
     });
