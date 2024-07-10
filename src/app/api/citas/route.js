@@ -8,8 +8,8 @@ export async function GET() {
     const citas = await prisma.cita.findMany();
     return NextResponse.json(citas);
   } catch (error) {
-    console.error('Error fetching citas:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    console.error('Error obteniendo citas:', error);
+    return NextResponse.json({ error: 'Error interno del Servidor' }, { status: 500 });
   }
 }
 
