@@ -96,37 +96,3 @@ html{
     background-color: #ddd;
   }
   
-
-  .modal {
-    position: fixed; /* Cambiado de absolute a fixed */
-    margin: 0%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.421);
-    backdrop-filter: blur(3vh);
-    transition: 500ms;
-    color: black;
-    overflow: none;
-  }
-  
-  .modal-content {
-    align-content: center;
-    align-self: center;
-    align-items: center;
-    text-align: center;
-    margin: auto;
-    background-color: white;
-    width: 50%;
-    padding: 2vh;
-    border: .2vh solid #888;
-    border-radius: 2vh;
-    transition: 500ms;
-    color: black;
-    box-shadow: 0 0 4vh black;
-    animation: modalFadeIn 0.5s ease-out; /* Aplicar la animación */
-  }
-  

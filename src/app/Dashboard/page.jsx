@@ -1,7 +1,10 @@
+// src/pages/Dashboard.js
+
 "use client"
 
 import React, { useEffect, useState } from 'react';
 import "../../../public/css/dashb.css";
+import Modal from '../../components/Modal';
 
 function Dashboard() {
   const [citas, setCitas] = useState([]);
@@ -42,6 +45,9 @@ function Dashboard() {
     <div className='main'>
       <div className='Left'>
         <div className='NewsCreat'>
+          <h1>Filtros</h1>
+        </div>
+        <div className='NewsCreat'>
           <h1>Subir noticia</h1>
         </div>
       </div>
@@ -78,16 +84,11 @@ function Dashboard() {
           </table>
         </div>
       </div>
-      {showModal && (
-        <div className='modal'>
-          <div className='modal-content'>
-            <h2>Confirmar eliminación</h2>
-            <p>¿Estás seguro de que deseas eliminar esta cita?</p>
-            <button onClick={() => deleteCita(citaToDelete)}>Sí</button>
-            <button onClick={() => setShowModal(false)}>No</button>
-          </div>
-        </div>
-      )}
+      <Modal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onConfirm={() => deleteCita(citaToDelete)}
+      />
     </div>
   );
 }
