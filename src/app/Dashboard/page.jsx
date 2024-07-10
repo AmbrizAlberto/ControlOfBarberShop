@@ -40,13 +40,12 @@ function Dashboard() {
   }, []);
 
   return (
-    <html>
     <div className='main'>
       <Modal
         show={showModal}
         onClose={() => setShowModal(false)}
         onConfirm={() => {
-          if (citaToDelete) {
+          if (citaToDelete !== null) {
             deleteCita(citaToDelete);
             setCitaToDelete(null);
           }
@@ -94,7 +93,6 @@ function Dashboard() {
         </div>
       </div>
     </div>
-    </html>
   );
 }
 
