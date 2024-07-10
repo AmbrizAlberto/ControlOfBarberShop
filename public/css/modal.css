@@ -1,37 +1,45 @@
-html{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-}
+/* public/css/modal.css */
+
+@keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5vh);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 .modal {
-    display: flex;
-    position: fixed;
-    margin: 0%;
+    position: fixed; /* Cambiado de absolute a fixed */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.421);
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3vh);
     transition: 500ms;
     color: black;
+    overflow: hidden; /* Cambiado de none a hidden */
   }
   
   .modal-content {
-    align-content: center;
-    align-self: center;
-    align-items: center;
-    text-align: center;
-    margin: auto;
     background-color: white;
     width: 50%;
     padding: 2vh;
-    border: .2vh solid #888;
+    border: 0.2vh solid #888;
     border-radius: 2vh;
     transition: 500ms;
     color: black;
     box-shadow: 0 0 4vh black;
     animation: modalFadeIn 0.5s ease-out; /* Aplicar la animación */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Asegurarse de que el contenido esté centrado */
   }
   

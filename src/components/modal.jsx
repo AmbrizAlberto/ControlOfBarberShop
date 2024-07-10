@@ -1,4 +1,4 @@
-// src/components/Modal.js
+// src/components/Modal.jsx
 
 import React from 'react';
 import '../../public/css/modal.css';

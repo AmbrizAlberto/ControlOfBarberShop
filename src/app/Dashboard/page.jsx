@@ -1,5 +1,3 @@
-// src/pages/Dashboard.js
-
 "use client"
 
 import React, { useEffect, useState } from 'react';
@@ -43,6 +41,16 @@ function Dashboard() {
 
   return (
     <div className='main'>
+      <Modal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onConfirm={() => {
+          if (citaToDelete) {
+            deleteCita(citaToDelete);
+            setCitaToDelete(null);
+          }
+        }}
+      />
       <div className='Left'>
         <div className='NewsCreat'>
           <h1>Filtros</h1>
@@ -84,11 +92,6 @@ function Dashboard() {
           </table>
         </div>
       </div>
-      <Modal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        onConfirm={() => deleteCita(citaToDelete)}
-      />
     </div>
   );
 }
