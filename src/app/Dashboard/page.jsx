@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useEffect, useState } from 'react';
 import "../../../public/css/dashb.css";
@@ -25,8 +25,8 @@ function Dashboard() {
         method: 'DELETE',
       });
       if (res.ok) {
-        setCitas(citas.filter(cita => cita.id !== id));
-        setShowModal(false);
+        setCitas(citas.filter(cita => cita.id !== id)); // Actualiza el estado eliminando la cita eliminada
+        setShowModal(false); // Cierra el modal después de eliminar
       } else {
         console.error('Error eliminando la cita:', await res.json());
       }
@@ -47,7 +47,7 @@ function Dashboard() {
         onConfirm={() => {
           if (citaToDelete !== null) {
             deleteCita(citaToDelete);
-            setCitaToDelete(null);
+            setCitaToDelete(null); // Reinicia el estado de citaToDelete después de eliminar
           }
         }}
       />
