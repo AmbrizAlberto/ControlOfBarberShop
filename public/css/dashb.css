@@ -21,7 +21,7 @@ html{
 
 /* NOTICIAS */
 .Left {
-    width: 50%;
+    width: 40%;
     height: auto; /* Cambiado a auto para permitir la expansión dinámica */
     border-top-left-radius: 3vh;
     border-bottom-left-radius: 3vh;
@@ -33,12 +33,50 @@ html{
 }
 
 .Right{
-    width: 40%;
+    width: 55%;
     height: auto;
     margin: auto;
     text-align: center;
-    padding: 0 2vh;
     font-size: 3vh;
     font-weight: bold;
     margin-bottom: 2vh;
 }
+
+.citaslist{
+    text-align: left;
+    background-color: wheat;
+    width: 100%;
+    border: 1px solid black;
+    font-size: 3vh;
+    padding: 1vh;
+    border-radius: 2vh;
+}
+
+
+.citasTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .citasTable th, .citasTable td {
+    text-align: left;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .citasTable th {
+    color: white;
+    background-color: #ff6c6c;
+    text-align: center;
+    font-size: 3vh;
+  }
+  
+  .citasTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .citasTable tr:hover {
+    background-color: #ddd;
+  }
+  
