@@ -21,7 +21,7 @@ function Dashboard() {
 
   const deleteCita = async (id) => {
     try {
-      const res = await fetch(`/api/citas/[${id}]`, {
+      const res = await fetch(`/api/citas/${id}`, {
         method: 'DELETE',
       });
       if (res.ok) {
@@ -83,16 +83,11 @@ function Dashboard() {
                   <td>{cita.message}</td>
                   <td>
                     <button
-                     type="button"
-                     onClick={async () => {
-                      const res = await fetch(`api/citas/${params.id}`, {
-                        method: "DELETE",
-                      })
-                      const data = await res.json()
-                      console.log(data)
-                      /* router.push("/") */
+                      type="button"
+                      onClick={async () => {
+                        await deleteCita(cita.id);
                       }}
-                     >
+                    >
                       Borrar
                     </button>
                   </td>
