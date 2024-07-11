@@ -82,8 +82,18 @@ function Dashboard() {
                   <td>{cita.duration} minutos</td>
                   <td>{cita.message}</td>
                   <td>
-                    <button onClick={() => { setCitaToDelete(cita.id); setShowModal(true); }}>
-                      Eliminar
+                    <button
+                     type="button"
+                     onClick={async () => {
+                      const res = await fetch(`api/citas/${params.id}`, {
+                        method: "DELETE",
+                      })
+                      const data = await res.json()
+                      console.log(data)
+                      /* router.push("/") */
+                      }}
+                     >
+                      Borrar
                     </button>
                   </td>
                 </tr>
