@@ -21,7 +21,7 @@ function Dashboard() {
 
   const deleteCita = async (id) => {
     try {
-      const res = await fetch(`/api/citas/${id}`, {
+      const res = await fetch(`/api/citas/[${id}]`, {
         method: 'DELETE',
       });
       if (res.ok) {
