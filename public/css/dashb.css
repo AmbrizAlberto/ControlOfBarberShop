@@ -56,16 +56,17 @@ html{
     font-size: 3vh;
     font-weight: bold;
     margin-bottom: 2vh;
+    color: rgb(0, 110, 255);
 }
 
 .citaslist{
-    text-align: left;
-    background-color: wheat;
-    width: 100%;
-    border: 1px solid black;
-    font-size: 3vh;
-    padding: 1vh;
-    border-radius: 2vh;
+  text-align: left;
+  background-color: wheat;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 3vh;
+  padding: 1vh;
+  border-radius: 2vh;
 }
 
 
@@ -73,6 +74,7 @@ html{
     width: 100%;
     border-collapse: collapse;
     margin-top: 2vh;
+    color: black;
   }
   
   .citasTable th, .citasTable td {
