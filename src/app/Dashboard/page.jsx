@@ -53,7 +53,7 @@ function Dashboard() {
         }}
       />
       <div className='Left'>
-        <div className='NewsCreat'>
+        <div className='Filtros'>
           <h1>Filtros</h1>
         </div>
         <div className='NewsCreat'>
