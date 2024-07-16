@@ -57,6 +57,7 @@ function Dashboard() {
         </div>
         <div className='NewsCreat'>
           <h1>Subir noticia</h1>
+          <textarea value={""} onChange={(e) => setMessage(e.target.value)} placeholder="Escribe la Noticia" />
         </div>
       </div>
       <div className='Right'>
