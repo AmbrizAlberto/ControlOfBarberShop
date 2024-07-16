@@ -24,18 +24,21 @@ html{
 
 /* IZQUIERDA */
 .Left {
-    width: 30%;
-    height: auto; /* Cambiado a auto para permitir la expansión dinámica */
-    border-top-left-radius: 3vh;
-    border-bottom-left-radius: 3vh;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 4vh 0vh 4vh -1vh rgba(0, 0, 0, 0.318);
-    /*           x    y  blr   t  */
+  border: 1px solid red;
+  width: 30%;
+  height: auto; /* Cambiado a auto para permitir la expansión dinámica */
+  border-top-left-radius: 3vh;
+  border-bottom-left-radius: 3vh;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 4vh 0vh 4vh -1vh rgba(0, 0, 0, 0.318);
+  /*           x    y  blr   t  */
 }
 
 .NewsCreat {
-  width: 100%;
+  
+  border: 1px solid blue;
+  width: 90%;
   margin: auto;
   padding: 10px; /* Añadido padding para espacio alrededor del contenido */
 }
@@ -55,6 +58,8 @@ html{
   margin-top: 1vh;
   padding: 10px; /* Añadido padding para espacio interno */
   box-sizing: border-box;
+  border-radius: 2vh;
+  font-size: 3vh;
 }
 
 /* DERECHA */
