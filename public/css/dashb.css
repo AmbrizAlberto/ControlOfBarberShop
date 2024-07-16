@@ -24,7 +24,6 @@ html{
 
 /* IZQUIERDA */
 .Left {
-  border: 1px solid red;
   width: 30%;
   height: auto; /* Cambiado a auto para permitir la expansión dinámica */
   border-top-left-radius: 3vh;
@@ -36,8 +35,6 @@ html{
 }
 
 .NewsCreat {
-  
-  border: 1px solid blue;
   width: 90%;
   margin: auto;
   padding: 10px; /* Añadido padding para espacio alrededor del contenido */
@@ -110,4 +107,36 @@ html{
   
 .citasTable tr:hover {
     background-color: #ddd;
+}
+
+
+/* CSS previo */
+
+.Filtros {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid red;
+  margin-bottom: 20px;
+}
+
+.Filtros h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.filtro {
+  margin-bottom: 10px;
+}
+
+.filtro label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filtro input,
+.filtro select {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
 }
