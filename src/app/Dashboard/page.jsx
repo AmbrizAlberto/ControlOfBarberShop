@@ -8,6 +8,7 @@ function Dashboard() {
   const [citas, setCitas] = useState([]);
   const [citaToDelete, setCitaToDelete] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState("");
 
   const fetchCitas = async () => {
     try {
@@ -57,7 +58,7 @@ function Dashboard() {
         </div>
         <div className='NewsCreat'>
           <h1>Subir noticia</h1>
-          <textarea value={""} onChange={(e) => setMessage(e.target.value)} placeholder="Escribe la Noticia" />
+          <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Escribe la Noticia" />
         </div>
       </div>
       <div className='Right'>
