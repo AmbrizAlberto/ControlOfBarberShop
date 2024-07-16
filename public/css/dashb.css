@@ -64,6 +64,7 @@ html{
     width: 65%;
     height: auto;
     margin: auto;
+    margin-top: 0;
     text-align: center;
     font-size: 3vh;
     font-weight: bold;
@@ -116,17 +117,19 @@ html{
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: 1px solid red;
+  border-bottom: 1px solid black;
   margin-bottom: 20px;
 }
 
 .Filtros h1 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 1vh; 
 }
 
 .filtro {
-  margin-bottom: 10px;
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 2vh;
 }
 
 .filtro label {
@@ -137,6 +140,8 @@ html{
 .filtro input,
 .filtro select {
   width: 100%;
-  padding: 5px;
+  padding: .5vh;
   box-sizing: border-box;
+  border-radius: 1vh;
+border: 1px solid rgba(0, 0, 0, 0.49);
 }
