@@ -34,21 +34,31 @@ html{
     /*           x    y  blr   t  */
 }
 
-.NewsCreat{
-    width: 100%;
-    display: flex;
-    margin: auto;
+.NewsCreat {
+  width: 100%;
+  margin: auto;
+  padding: 10px; /* Añadido padding para espacio alrededor del contenido */
 }
 
-.NewsCreat h1{
-    display: flex;
-    margin: auto;
-    margin-top: 3vh;
-    text-align: center;
+.NewsCreat h1 {
+  width: 100%;
+  display: block;
+  margin: auto;
+  margin-top: 3vh;
+  text-align: center;
+}
+
+.NewsCreat textarea {
+  display: block;
+  width: 100%;
+  height: 100px; /* Ajustar según sea necesario */
+  margin-top: 1vh;
+  padding: 10px; /* Añadido padding para espacio interno */
+  box-sizing: border-box;
 }
 
 /* DERECHA */
-.Right{
+.Right {
     width: 65%;
     height: auto;
     margin: auto;
@@ -59,7 +69,7 @@ html{
     color: rgb(0, 110, 255);
 }
 
-.citaslist{
+.citaslist {
   text-align: left;
   background-color: wheat;
   width: 100%;
@@ -69,32 +79,30 @@ html{
   border-radius: 2vh;
 }
 
-
 .citasTable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 2vh;
     color: black;
-  }
+}
   
-  .citasTable th, .citasTable td {
+.citasTable th, .citasTable td {
     text-align: left;
     border: 1px solid #ddd;
     padding: 8px;
-  }
+}
   
-  .citasTable th {
+.citasTable th {
     color: white;
     background-color: #ff6c6c;
     text-align: center;
     font-size: 3vh;
-  }
+}
   
-  .citasTable tr:nth-child(even) {
+.citasTable tr:nth-child(even) {
     background-color: #f9f9f9;
-  }
+}
   
-  .citasTable tr:hover {
+.citasTable tr:hover {
     background-color: #ddd;
-  }
-  
+}
