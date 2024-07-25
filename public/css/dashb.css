@@ -13,7 +13,7 @@ html{
     margin-top: 6vh;
     width: 90%;
     height: 100%;
-    border: 1px solid black;
+    border: .2vh solid black;
     display: flex;
     background-color: rgba(0, 0, 0, 0.193);
     backdrop-filter: blur(2vh);
@@ -44,14 +44,15 @@ html{
 .Filtros {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  border-bottom: 1px solid black;
-  margin-bottom: 20px;
+  padding: 3vh;
+  border-bottom: .2vh solid black;
+  margin-bottom: 2vh;
 }
 
 .Filtros h1 {
+  margin-top: 0;
   text-align: center;
-  margin-bottom: 1vh; 
+  margin-bottom: 4vh; 
 }
 
 .filtro {
@@ -62,7 +63,7 @@ html{
 
 .filtro label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: .6vh;
 }
 
 .filtro input,
@@ -71,7 +72,7 @@ html{
   padding: .5vh;
   box-sizing: border-box;
   border-radius: 1vh;
-  border: 1px solid rgba(0, 0, 0, 0.49);
+  border: .2vh solid rgba(0, 0, 0, 0.49);
   font-size: 1.8vh;
 }
 
@@ -79,23 +80,24 @@ html{
 .NewsCreat {
   width: 90%;
   margin: auto;
-  padding: 10px; /* Añadido padding para espacio alrededor del contenido */
+  padding: 1vh; /* Añadido padding para espacio alrededor del contenido */
 }
 
 .NewsCreat h1 {
+  top: 0;
   width: 100%;
   display: block;
   margin: auto;
-  margin-top: 3vh;
+  margin-top: 0;
   text-align: center;
 }
 
 .NewsCreat textarea {
   display: block;
   width: 100%;
-  height: 100px; /* Ajustar según sea necesario */
+  height: 10vh; /* Ajustar según sea necesario */
   margin-top: 1vh;
-  padding: 10px; /* Añadido padding para espacio interno */
+  padding: 1vh; /* Añadido padding para espacio interno */
   box-sizing: border-box;
   border-radius: 2vh;
   font-size: 2vh;
