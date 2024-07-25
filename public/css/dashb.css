@@ -34,6 +34,9 @@ html{
   /*           x    y  blr   t  */
 }
 
+.Left h1{
+  font-size: 4vh;
+}
 .NewsCreat {
   width: 90%;
   margin: auto;
@@ -56,7 +59,7 @@ html{
   padding: 10px; /* Añadido padding para espacio interno */
   box-sizing: border-box;
   border-radius: 2vh;
-  font-size: 3vh;
+  font-size: 2vh;
 }
 
 /* DERECHA */
@@ -111,7 +114,7 @@ html{
 }
 
 
-/* CSS previo */
+/* FILTROS */
 
 .Filtros {
   display: flex;
