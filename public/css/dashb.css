@@ -152,3 +152,20 @@ html{
 .citasTable tr:hover {
     background-color: #ddd;
 }
+
+.btndeletecita{
+  display: flex;
+  margin: auto;
+  padding: 1vh;
+  background-color: #ff6c6c;
+  border-radius: 2vh;
+  font-size: 2vh;
+  border: .5vh dotted black;
+}
+
+.btndeletecita:hover{
+  border: .5vh dotted black;
+  background-color: black;
+  color: white;
+  transition: 500ms;
+}
