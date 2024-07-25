@@ -118,7 +118,7 @@ html{
   text-align: left;
   background-color: wheat;
   width: 100%;
-  border: 1px solid black;
+  border: 1vh solid black;
   font-size: 3vh;
   padding: 1vh;
   border-radius: 2vh;
@@ -129,12 +129,13 @@ html{
     border-collapse: collapse;
     margin-top: 2vh;
     color: black;
+    border-spacing: .3vh;
 }
   
 .citasTable th, .citasTable td {
     text-align: left;
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: .2vh solid #ddd;
+    padding: .8vh;
 }
   
 .citasTable th {
