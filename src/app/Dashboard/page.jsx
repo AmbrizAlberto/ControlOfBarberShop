@@ -119,6 +119,7 @@ function Dashboard() {
                       onClick={async () => {
                         await deleteCita(cita.id);
                       }}
+                      className="btndeletecita"
                     >
                       Borrar
                     </button>
