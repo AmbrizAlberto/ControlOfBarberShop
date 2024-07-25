@@ -161,11 +161,15 @@ html{
   border-radius: 2vh;
   font-size: 2vh;
   border: .5vh dotted black;
+  transition: 500ms;
+  font-weight: bold;
 }
 
 .btndeletecita:hover{
-  border: .5vh dotted black;
-  background-color: black;
-  color: white;
+  cursor: pointer;
+  border: .5vh solid black;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 5vh red;
   transition: 500ms;
 }
