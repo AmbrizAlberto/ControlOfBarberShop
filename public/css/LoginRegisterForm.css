@@ -1,0 +1,235 @@
+.Login{
+  display: flex;
+  margin: auto;
+  margin-top: 15vh;
+  border-radius: 3vh;
+  width: 170vh;
+  height: 80vh;
+  background-color: transparent;
+  box-shadow: 0 0 3vh rgba(0, 0, 0, 0.665);
+}
+
+/* Izquierda */
+.infologin{
+  display: flex;
+  width: 50%;
+  display: flex;
+  justify-content: center; /* Centra el texto horizontalmente */
+  align-items: center; /* Centra el texto verticalmente */
+  border-radius: 3vh;
+  box-shadow: 1vh 0 2vh rgba(0, 0, 0, 0.473);
+  background-image: url(https://images8.alphacoders.com/992/thumb-1920-992848.jpg);
+  background-size: cover; /* Asegura que la imagen cubra completamente el contenedor sin distorsionarse */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+  position: relative;
+}
+
+.infologin::before{
+  border-radius: 3vh;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.341); /* Color de la superposición (negro con 50% de opacidad) */
+  border-radius: 2vh; /* Coincide con el borde del contenedor */
+  z-index: 1; /* Asegura que la superposición esté detrás del texto */
+}
+
+.infologin h1{
+  margin: auto;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté encima de la superposición */
+  color: rgba(255, 255, 255, 0.14); /* Hace que el color del texto sea transparente */
+  font-size: 10vh; /* Tamaño del texto */
+  background: inherit; /* Hereda el fondo del contenedor */
+  -webkit-background-clip: text; /* Clipa el fondo al texto (Safari y Chrome) */
+  background-clip: text; /* Clipa el fondo al texto (Firefox) */
+  filter: drop-shadow(0px 0px 10px rgb(14, 14, 14)) drop-shadow(0px 0px 1px rgb(0, 0, 0)); /* Añade bordes blancos alrededor del texto */
+  margin: 0vh  0vh 0vh 0vh;
+  text-align: center;
+  font-weight: bold;
+  display: block; /* Asegura que el h1 se comporte como un bloque */
+}
+
+/* Derecha */
+.login-register-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 2vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  border-radius: 1vh;
+}
+
+.form-toggle {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.form-toggle button {
+  color: rgba(0, 0, 0, 0.466);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2.5vh;
+  transition: color 0.3s;
+}
+
+.form-toggle button.active {
+  font-weight: bold;
+  color: #000000;
+}
+
+.form-toggle button:not(.active):hover {
+  color: #0000007b;
+}
+
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 4vh;
+}
+
+.form h2 {
+  font-size: 4vh;
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+.form label {
+  font-size: 2.4vh;
+  margin-bottom: 1vh;
+  font-weight: bold;
+}
+
+.form input {
+  font-size: 2vh;
+  margin-bottom: 2vh;
+  padding: 1vh;
+  border: .5vh solid #ccc;
+  border-radius: 1.5vh;
+}
+
+.Login a{
+  margin: auto;
+  width: 50%;
+  color: black;
+  border-radius: 1vh;
+  text-decoration: none;
+}
+
+.form button {
+  width: 100%;
+  margin: auto;
+  font-size: 3vh !important;
+  color: black;
+  background-color: #ffffff;
+  padding: 1vh;
+  position: relative;
+  border-radius: 1vh;
+  padding: 1vh;
+  transition: 500ms;
+}
+
+.form button:hover {
+  cursor: pointer;
+  background-color: #9e9e9e;
+  color: rgb(0, 0, 0);
+  transition: 500ms;
+  box-shadow: .6vh .9vh .5vh rgba(0, 0, 0, 0.816);
+}
+
+
+
+
+/* FOOTERS */
+footer {
+  margin: auto;
+  margin-top: 10vh;
+  width: 90%;
+  background-color: #fff;
+  color: #000000;
+  padding: 20px 0;
+  border-radius: 20px;
+  margin-bottom: 5vh;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-container div {
+  flex: 1;
+  margin: 10px;
+}
+
+.footer-about,
+.footer-contact,
+.footer-links,
+.footer-social {
+  max-width: 250px;
+}
+
+.footer-about p,
+.footer-contact p,
+.footer-links ul,
+.footer-social ul {
+  margin: 0;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-social a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: wrap;
+  gap: 10px;
+}
+
+.footer-bottom {
+  margin: auto;
+  width: 90%;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #0000007a;
+}
+
+
+
+.header{
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.btnhead{
+  left: 15%;
+}

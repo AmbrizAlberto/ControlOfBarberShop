@@ -8,8 +8,6 @@ import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import '../../../../public/css/LoginRegisterForm.css';
 
-import Header from '@/components/header';
-
 export default function LoginRegisterForm() {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -71,7 +69,6 @@ export default function LoginRegisterForm() {
 
   return (
     <div>
-      <Header/>
 
       <div className='Login'>
         <div className='infologin'>
