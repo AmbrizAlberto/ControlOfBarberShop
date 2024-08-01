@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import jwt from 'jsonwebtoken';
 import "../../../public/css/dashb.css";
 import Modal from '../../components/Modal';
@@ -25,10 +25,10 @@ function Dashboard() {
         setAuthorized(true);
       } catch (e) {
         console.error(e);
-        router.push('/login');
+        router.push('/Login');
       }
     } else {
-      router.push('/login');
+      router.push('/Login');
     }
   }, [router]);
 
