@@ -1,6 +1,8 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import jwt from 'jsonwebtoken';
 import "../../../public/css/dashb.css";
 import Modal from '../../components/Modal';
 
@@ -12,6 +14,29 @@ function Dashboard() {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedService, setSelectedService] = useState("");
   const [searchName, setSearchName] = useState("");
+  const [authorized, setAuthorized] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        jwt.verify(token, 'your-secret-key'); // Usa la misma clave secreta que usaste para generar el JWT
+        setAuthorized(true);
+      } catch (e) {
+        console.error(e);
+        router.push('/login');
+      }
+    } else {
+      router.push('/login');
+    }
+  }, [router]);
+
+  useEffect(() => {
+    if (authorized) {
+      fetchCitas();
+    }
+  }, [authorized]);
 
   const fetchCitas = async () => {
     try {
@@ -39,16 +64,16 @@ function Dashboard() {
     }
   };
 
-  useEffect(() => {
-    fetchCitas();
-  }, []);
-
   const filteredCitas = citas.filter(cita => {
     const matchesDate = selectedDate ? new Date(cita.date).toISOString().slice(0, 10) === selectedDate : true;
     const matchesService = selectedService ? cita.services.includes(selectedService) : true;
     const matchesName = searchName ? cita.clientName.toLowerCase().includes(searchName.toLowerCase()) : true;
     return matchesDate && matchesService && matchesName;
   });
+
+  if (!authorized) {
+    return <div>Loading...</div>; // Puedes mostrar un loader mientras verificas la autenticación
+  }
 
   return (
     <div className='main'>
