@@ -41,6 +41,27 @@ html{
 
 /* FILTROS */
 
+.logoutButton{
+  padding: 1vh;
+  font-size: 2vh;
+  color: black;
+  background-color: rgb(255, 170, 170);
+  margin: auto;
+  margin-bottom: 3vh;
+  border-radius: 2vh;
+  border: .5vh solid black;
+  font-weight: bold;
+  transition: 300ms;
+}.logoutButton:hover{
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  font-size: 2.5vh;
+  border: .5vh solid white;
+  box-shadow: 0 0 4vh red;
+  transition: 300ms;
+}
+
 .Filtros {
   display: flex;
   flex-direction: column;
