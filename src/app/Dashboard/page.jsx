@@ -54,9 +54,6 @@ function Dashboard() {
     }
   };
 
-  // Resto del componente...
-
-
   const deleteCita = async (id) => {
     try {
       const res = await fetch(`/api/citas/${id}`, {
@@ -80,6 +77,10 @@ function Dashboard() {
     return matchesDate && matchesService && matchesName;
   });
 
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Elimina el token del localStorage
+    router.push('/Login'); // Redirige al login
+  };
 
   return (
     <div className='main'>
@@ -95,6 +96,8 @@ function Dashboard() {
       />
       <div className='Left'>
         <div className='Filtros'>
+        <button onClick={handleLogout} className="logoutButton">Cerrar Sesión</button> {/* Botón de cerrar sesión */}
+        <br></br>
           <h1>Filtros</h1>
           <div className='filtro'>
             <label htmlFor="dateFilter">Fecha</label>
