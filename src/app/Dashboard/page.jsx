@@ -9,6 +9,7 @@ import "../../../public/css/dashb.css";
 import Modal from '../../components/Modal';
 
 function Dashboard() {
+
   const [citas, setCitas] = useState([]);
   const [citaToDelete, setCitaToDelete] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -19,6 +20,7 @@ function Dashboard() {
   const [authorized, setAuthorized] = useState(false);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -38,12 +40,6 @@ function Dashboard() {
     setLoading(false);
   }, [router]);
 
-  useEffect(() => {
-    if (authorized) {
-      fetchCitas();
-    }
-  }, [authorized]);
-
   const fetchCitas = async () => {
     try {
       const res = await fetch('/api/citas');
@@ -53,6 +49,10 @@ function Dashboard() {
       console.error('Error buscando citas:', error);
     }
   };
+
+  useEffect(() => {
+    fetchCitas();
+  }, [authorized]);
 
   const deleteCita = async (id) => {
     try {
@@ -82,6 +82,7 @@ function Dashboard() {
     router.push('/Login'); // Redirige al login
   };
 
+
   return (
     <div className='main'>
       <Modal
@@ -97,7 +98,6 @@ function Dashboard() {
       <div className='Left'>
         <div className='Filtros'>
         <button onClick={handleLogout} className="logoutButton">Cerrar Sesión</button> {/* Botón de cerrar sesión */}
-        <br></br>
           <h1>Filtros</h1>
           <div className='filtro'>
             <label htmlFor="dateFilter">Fecha</label>
