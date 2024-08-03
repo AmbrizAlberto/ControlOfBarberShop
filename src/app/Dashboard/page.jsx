@@ -1,3 +1,5 @@
+/* src/app/Dashboard/page.jsx */
+
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -15,21 +17,25 @@ function Dashboard() {
   const [selectedService, setSelectedService] = useState("");
   const [searchName, setSearchName] = useState("");
   const [authorized, setAuthorized] = useState(false);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
       try {
-        jwt.verify(token, 'your-secret-key'); // Usa la misma clave secreta que usaste para generar el JWT
+        jwt.verify(token, 'your-secret-key'); // Cambia 'your-secret-key' por la misma clave usada en el backend
         setAuthorized(true);
+        console.log('Token verificado'); // Log de verificación exitosa
       } catch (e) {
-        console.error(e);
-        router.push('/Login');
+        console.error('Error verificando token:', e);
+        // router.push('/Login?error=token_invalid'); // Comentar para pruebas
       }
     } else {
+      console.log('Token no encontrado, redirigiendo al login');
       router.push('/Login');
     }
+    setLoading(false);
   }, [router]);
 
   useEffect(() => {
@@ -47,6 +53,9 @@ function Dashboard() {
       console.error('Error buscando citas:', error);
     }
   };
+
+  // Resto del componente...
+
 
   const deleteCita = async (id) => {
     try {
@@ -71,9 +80,6 @@ function Dashboard() {
     return matchesDate && matchesService && matchesName;
   });
 
-  if (!authorized) {
-    return <div>Loading...</div>; // Puedes mostrar un loader mientras verificas la autenticación
-  }
 
   return (
     <div className='main'>

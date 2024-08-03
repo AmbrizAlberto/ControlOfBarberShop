@@ -3,10 +3,12 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,9 +23,10 @@ function Login() {
 
     const data = await res.json();
     if (data.success) {
-      // Redirect or show success message
+      localStorage.setItem('token', data.token); // Guarda el token en localStorage
+      router.push('/Dashboard'); // Redirige al dashboard
     } else {
-      // Show error message
+      alert('Error: Usuario o contraseña incorrectos'); // Muestra un mensaje de error
     }
   };
 
