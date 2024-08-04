@@ -20,6 +20,17 @@ function ClientView() {
   const [modalMessage, setModalMessage] = useState('');
 
   useEffect(() => {
+
+    const fetchNews = async () => {
+      try {
+        const res = await fetch('/api/noticias');
+        const data = await res.json();
+        setNews(data);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      }
+    };
+
     const fetchCitas = async () => {
       try {
         const res = await fetch('/api/citas');
@@ -56,6 +67,7 @@ function ClientView() {
 
     if (date) {
       fetchCitas();
+      fetchNews();
     }
   }, [date]);
 
@@ -169,9 +181,20 @@ function ClientView() {
   return (
     <div >
 
-    <div className='newscont'>
-      <h1>No hay noticias</h1>
-    </div>
+      <div className="newsContainer">
+        {news.length > 0 ? (
+          news.map((notice) => (
+            <div key={notice.id} className="newsItem">
+              <h2>{notice.title}</h2>
+              <p>{notice.description}</p>
+              <small>Válido desde: {new Date(notice.startDate).toLocaleDateString()} hasta: {new Date(notice.endDate).toLocaleDateString()}</small>
+            </div>
+          ))
+        ) : (
+          <h1>No hay noticias</h1>
+        )}
+      </div>
+      
       <div className='main'>
         
         <div className='logo'>
