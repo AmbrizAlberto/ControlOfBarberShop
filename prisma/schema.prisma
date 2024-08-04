@@ -24,3 +24,13 @@ model User {
   username String @unique
   password String
 }
+
+model News {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  startDate   DateTime
+  endDate     DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
