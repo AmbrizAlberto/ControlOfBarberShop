@@ -18,18 +18,9 @@ function ClientView() {
   const [availableTimes, setAvailableTimes] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
+  const [news, setNews] = useState([]);
 
   useEffect(() => {
-
-    const fetchNews = async () => {
-      try {
-        const res = await fetch('/api/noticias');
-        const data = await res.json();
-        setNews(data);
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      }
-    };
 
     const fetchCitas = async () => {
       try {
@@ -67,9 +58,27 @@ function ClientView() {
 
     if (date) {
       fetchCitas();
-      fetchNews();
     }
   }, [date]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await fetch('/api/noticias');
+        if (!res.ok) {
+          throw new Error('Error al recuperar las noticias');
+        }
+        const data = await res.json();
+        console.log('Noticias recibidas:', data); // Agrega este log para verificar los datos recibidos
+        setNews(data);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      }
+    };
+  
+    fetchNews();
+  }, []);
+
 
   const handleCorteSpecificServiceChange = (e) => {
     const selectedSpecificService = e.target.value;
@@ -182,8 +191,8 @@ function ClientView() {
     <div >
 
       <div className="newsContainer">
-        {news.length > 0 ? (
-          news.map((notice) => (
+        {Array.isArray(news) && news.length > 0 ? (
+          news.map(news => (
             <div key={notice.id} className="newsItem">
               <h2>{notice.title}</h2>
               <p>{notice.description}</p>
@@ -194,7 +203,7 @@ function ClientView() {
           <h1>No hay noticias</h1>
         )}
       </div>
-      
+
       <div className='main'>
         
         <div className='logo'>
