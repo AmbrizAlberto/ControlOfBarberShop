@@ -162,11 +162,14 @@ function Dashboard() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Descripción de la Noticia"
           />
+          Fecha de inicio de Noticia:
           <input
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
           />
+          <p></p>
+          Fecha de cierre de Noticia:
           <input
             type="date"
             value={endDate}
