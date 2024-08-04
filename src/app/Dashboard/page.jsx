@@ -20,6 +20,35 @@ function Dashboard() {
   const [authorized, setAuthorized] = useState(false);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+
+  const handleCreateNews = async () => {
+    try {
+      const res = await fetch('/api/noticias', {
+        method: 'POST',
+        body: JSON.stringify({
+          title,
+          description,
+          startDate,
+          endDate,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (res.ok) {
+        // Noticia creada con éxito, puedes actualizar el estado o mostrar un mensaje
+      } else {
+        console.error('Error creando la noticia:', await res.json());
+      }
+    } catch (error) {
+      console.error('Error creando la noticia:', error);
+    }
+  };
   
 
   useEffect(() => {
@@ -120,9 +149,30 @@ function Dashboard() {
             <input type="text" id="nameFilter" value={searchName} onChange={(e) => setSearchName(e.target.value)} placeholder="Buscar por nombre" />
           </div>
         </div>
-        <div className='NewsCreat'>
+        <div className="NewsCreat">
           <h1>Subir noticia</h1>
-          <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Escribe la Noticia" />
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Título de la Noticia"
+          />
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Descripción de la Noticia"
+          />
+          <input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+          <input
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
+          <button onClick={handleCreateNews}>Crear Noticia</button>
         </div>
       </div>
       <div className='Right'>
