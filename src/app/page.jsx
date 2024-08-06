@@ -194,9 +194,8 @@ function ClientView() {
         {Array.isArray(news) && news.length > 0 ? (
           news.map((notice) => (
             <div key={notice.id} className="newsItem">
-              <h2>{notice.title}</h2>
-              <p>{notice.description}</p>
-              <small>Válido desde: {new Date(notice.startDate).toLocaleDateString()} hasta: {new Date(notice.endDate).toLocaleDateString()}</small>
+              <h2 className='newstitle'>{notice.title}</h2>
+              <p className='newsdescription'>{notice.description}</p>
             </div>
           ))
         ) : (

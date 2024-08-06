@@ -9,7 +9,37 @@ html {
     background-color: white;
 }
 
-/* Logo */
+
+/* NEWS */
+
+.newsContainer{
+    width: 95%;
+    margin: auto;
+    margin-top: 3vh;
+    border: .5vh solid red;
+    border-radius: 3vh;
+    background-color: rgb(255, 164, 164);
+    color: black;
+}
+
+.newsItem{
+    padding: 1vh 5vh 1vh 5vh;
+    margin: auto;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.newsItem h2{
+    font-size: 4vh;
+    margin: 0;
+}
+
+.newsdescription{
+    margin-bottom: 0;
+    font-size: 3vh;
+}
+
+/* LOGO */
 .logo {
     position: absolute;
     display: flex;
@@ -67,7 +97,9 @@ html {
     margin-bottom: 5vh;
 }
 
-/* NOTICIAS */
+
+/* RIGHT SIDE */
+
 .rightside {
     width: 50%;
     height: auto; /* Cambiado a auto para permitir la expansión dinámica */
@@ -78,25 +110,6 @@ html {
     background-position: center;
     box-shadow: 4vh 0vh 4vh -1vh rgba(0, 0, 0, 0.318);
     /*           x    y  blr   t  */
-}
-
-.newscont {
-    position: relative;
-    display: flex;
-    margin: auto;
-    margin-top: 5vh;
-    width: 80%;
-    padding: 2vh;
-    backdrop-filter: blur(2vh);
-    background-color: rgba(255, 0, 0, 0.149);
-    border-radius: 3vh;
-    border: .4vh solid rgba(255, 0, 0, 0.533);
-}
-
-.newscont h1 {
-    font-size: 3vh;
-    font-weight: bold;
-    margin: 0; 
 }
 
 /* FORM */
@@ -124,6 +137,7 @@ html {
 
 p{
     margin: 1vh;
+    margin-left: 0;
 }
 
 .fecha{
