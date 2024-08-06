@@ -5,13 +5,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
-    const news = await prisma.news.findMany({
-      where: {
-        endDate: {
-          gte: new Date(), // Solo traer noticias que no hayan expirado
-        },
-      },
-    });
+    const news = await prisma.news.findMany();
 
     return NextResponse.json(news);
   } catch (error) {

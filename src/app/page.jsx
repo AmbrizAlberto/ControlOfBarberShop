@@ -192,7 +192,7 @@ function ClientView() {
 
       <div className="newsContainer">
         {Array.isArray(news) && news.length > 0 ? (
-          news.map(news => (
+          news.map((notice) => (
             <div key={notice.id} className="newsItem">
               <h2>{notice.title}</h2>
               <p>{notice.description}</p>
@@ -203,6 +203,7 @@ function ClientView() {
           <h1>No hay noticias</h1>
         )}
       </div>
+
 
       <div className='main'>
         
