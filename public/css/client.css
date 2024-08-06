@@ -182,7 +182,18 @@ button{
     border: .3vh solid rgba(0, 0, 0, 0.322);
     justify-content: center;
     font-weight: bold;
+    transition: 300ms;
 }
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 112, 112);
+    color: white;
+    border: .3vh solid white;
+    transition: 300ms;
+    box-shadow: 0 0 2vh rgb(0, 140, 255);
+}
+
 
 .selectores{
     background-color: rgba(0, 0, 0, 0.262);
