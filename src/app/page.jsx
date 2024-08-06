@@ -199,7 +199,7 @@ function ClientView() {
             </div>
           ))
         ) : (
-          <h1>No hay noticias</h1>
+          <h1>No hay noticias por ahora</h1>
         )}
       </div>
 
