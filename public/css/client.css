@@ -29,6 +29,10 @@ html {
     font-weight: bold;
 }
 
+.newsContainer h1{
+    padding: 0vh 5vh 0vh 5vh;
+}
+
 .newsItem h2{
     font-size: 4vh;
     margin: 0;
