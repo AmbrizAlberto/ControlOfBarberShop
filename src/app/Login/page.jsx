@@ -24,10 +24,10 @@ function Login() {
 
     const data = await res.json();
     if (data.success) {
-      localStorage.setItem('token', data.token); // Guarda el token en localStorage
-      router.push('/Dashboard'); // Redirige al dashboard
+      localStorage.setItem('token', data.token); 
+      router.push('/Dashboard'); 
     } else {
-      alert('Error: Usuario o contraseña incorrectos'); // Muestra un mensaje de error
+      alert('Error: Usuario o contraseña incorrectos');
     }
   };
 
