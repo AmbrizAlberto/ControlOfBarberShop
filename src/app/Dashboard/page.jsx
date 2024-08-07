@@ -69,6 +69,14 @@ function Dashboard() {
     setLoading(false);
   }, [router]);
 
+  useEffect(() => {
+    const hasReloaded = localStorage.getItem('hasReloaded');
+    if (!hasReloaded) {
+      localStorage.setItem('hasReloaded', 'true');
+      window.location.reload();
+    }
+  }, []);
+
   const fetchCitas = async () => {
     try {
       const res = await fetch('/api/citas');
@@ -108,6 +116,7 @@ function Dashboard() {
 
   const handleLogout = () => {
     localStorage.removeItem('token'); // Elimina el token del localStorage
+    localStorage.removeItem('hasReloaded'); // Elimina la marca de recarga para futuros inicios de sesión
     router.push('/Login'); // Redirige al login
   };
 
