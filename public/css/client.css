@@ -20,6 +20,7 @@ html {
     border-radius: 3vh;
     background-color: rgb(255, 164, 164);
     color: black;
+    transition: 500ms;
 }
 
 .newsItem{
@@ -27,20 +28,24 @@ html {
     margin: auto;
     margin-top: 0;
     font-weight: bold;
+    transition: 500ms;
 }
 
 .newsContainer h1{
     padding: 0vh 5vh 0vh 5vh;
+    transition: 500ms;
 }
 
 .newsItem h2{
     font-size: 4vh;
     margin: 0;
+    transition: 500ms;
 }
 
 .newsdescription{
     margin-bottom: 0;
     font-size: 3vh;
+    transition: 500ms;
 }
 
 /* LOGO */
@@ -52,6 +57,7 @@ html {
     width: 48%;
     margin: auto;
     margin-top: 3vh;
+    transition: 500ms;
   }
   
   .logo .blurred {
@@ -59,6 +65,7 @@ html {
     height: 20vh;
     filter: blur(2vh);
     z-index: 0;
+    transition: 500ms;
   }
   
   .logo .original {
@@ -66,6 +73,7 @@ html {
     height: 20vh;
     z-index: 1;
     filter: invert();
+    transition: 500ms;
   }
 
 
@@ -82,6 +90,7 @@ html {
     border-radius: 3vh;
     box-shadow: 0 0 6vh black;
     margin-bottom: 5vh;
+    transition: 500ms;
 }
 
 
@@ -97,6 +106,7 @@ html {
     background-position: center;
     box-shadow: 4vh 0vh 4vh -1vh rgba(0, 0, 0, 0.318);
     /*           x    y  blr   t  */
+    transition: 500ms;
 }
 
 /* Name */
@@ -105,6 +115,7 @@ html {
     display: flex;
     width: 49%;
     margin: auto;
+    transition: 500ms;
 }
 
 .barbername h1{
@@ -115,6 +126,7 @@ html {
     font-size: 10vh;
     text-shadow: 0 0 3vh rgb(44, 202, 255);
     font-weight: bold;
+    transition: 500ms;
 }
 
 /* FORM */
@@ -127,6 +139,7 @@ html {
     font-size: 3vh;
     font-weight: bold;
     margin-bottom: 2vh;
+    transition: 500ms;
 }
 
 
@@ -134,36 +147,44 @@ html {
 .client-view h1{
     color: rgb(0, 110, 255);
     text-shadow: 0 0 2px black;
+    transition: 500ms;
 }
 
 .name{
     color: black;
+    transition: 500ms;
 }
 
 p{
     margin: 1vh;
     margin-left: 0;
+    transition: 500ms;
 }
 
 .fecha{
     margin-top: 3vh;
+    transition: 500ms;
 }
 
 .selectores{
     text-align: left;
     margin-top: 3vh;
+    transition: 500ms;
 }
 
 .specific-service{
     text-align: left;
     margin-top: 3vh;
+    transition: 500ms;
 }
 .hora{
     margin-top: 3vh;
+    transition: 500ms;
 }
 
 .mensaje{
     margin-top: 3vh;
+    transition: 500ms;
 }
 
 select, textarea, input{
@@ -172,6 +193,7 @@ select, textarea, input{
     padding: 1vh;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 2vh;
+    transition: 500ms;
 }
 
 button{
@@ -197,6 +219,7 @@ button:hover{
     border: .3vh solid white;
     transition: 300ms;
     box-shadow: 0 0 2vh rgb(0, 140, 255);
+    transition: 500ms;
 }
 
 
@@ -206,6 +229,7 @@ button:hover{
     border-radius: 3vh;
     padding: 2vh;
     box-shadow: 0 0 2vh rgba(0, 0, 0, 0.541);
+    transition: 500ms;
 }
 
 .specific-service{
@@ -214,4 +238,5 @@ button:hover{
     border-radius: 3vh;
     padding: 2vh;
     box-shadow: 0 0 2vh rgba(0, 0, 0, 0.541);
+    transition: 500ms;
 }
