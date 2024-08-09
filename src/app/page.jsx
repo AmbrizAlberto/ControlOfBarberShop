@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from './components/Modal';
 import "../../public/css/client.css"
 import "../../public/css/checkboxclient.css"
+import "../../public/css/responsiveCV.css"
 
 function ClientView() {
   const [clientName, setClientName] = useState('');
