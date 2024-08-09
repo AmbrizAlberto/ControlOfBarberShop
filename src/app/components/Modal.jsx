@@ -1,7 +1,7 @@
 // src/app/components/Modal.jsx
 
 import React from 'react';
-import './modal.css'; // Asegúrate de tener tu archivo CSS de estilos para el modal
+import '../../../public/css/modal.css'; // Asegúrate de tener tu archivo CSS de estilos para el modal
 
 const Modal = ({ isOpen, onClose, message }) => {
   if (!isOpen) return null;
