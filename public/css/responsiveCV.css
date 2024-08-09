@@ -74,35 +74,123 @@
       .rightside{
         display: block;
         width: 100%;
-        height: 35vh;
+        height: 37vh;
         border-radius: 0;
         border-top-left-radius: 3vh;
         border-top-right-radius: 3vh;
         box-shadow: 0 3vh 3vh -1vh rgba(0, 0, 0, 0.459);
       }
       .barbername h1{
-        width: 100%;
+        width: 20% !important;
         font-size: 7vh;
         position: absolute;
-        margin-top: 6vh;
-        margin-left: 30vh;
-    }
-    .logo {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 30%;
-      margin: auto;
-      margin-top: 7vh;
-      margin-left: 5vh;
-    }
-    .client-view {
-      width: 90%;
-    }
+        margin-top: 2vh;
+        margin-left: 33vh;
+        text-align: end;
+      }
+      .logo {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        margin: auto;
+        margin-top: 7vh;
+        margin-left: 5vh;
+      }
+      .logo .blurred {
+        position: absolute;
+        height: 20vh;
+        filter: blur(2vh);
+        z-index: 0;
+      }
+      
+      .logo .original {
+        position: relative;
+        height: 20vh;
+        z-index: 1;
+        filter: invert();
+      }
+      .client-view {
+        width: 90%;
+        font-size: 4vh;
+      }
+      .client-view select, textarea, input {
+        font-size: 3vh;
+        background-color: rgba(0, 0, 0, 0.092);
+        padding: 1vh;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 2vh;
+      }
+      .custom-checkbox + .custom-checkbox-label {
+        font-size: 3vh;
+      }
     }
 
-    @media (max-width: 540px) {}
+    @media (max-width: 540px) {
+
+    }
+
+    @media (max-width: 376px) {
+      .main{
+        display: block;
+      }
+      .rightside{
+        display: block;
+        width: 100%;
+        height: 30vh !important;
+        border-radius: 0;
+        border-top-left-radius: 3vh;
+        border-top-right-radius: 3vh;
+        box-shadow: 0 3vh 3vh -1vh rgba(0, 0, 0, 0.459);
+      }
+      .barbername h1{
+        width: 190% !important;
+        text-align: center;
+        font-size: 5vh !important;
+        position: absolute;
+        margin-top: 15vh;
+        margin-left: 19vh !important;
+      }
+      .logo {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        margin: auto;
+        margin-top: 1vh;
+        margin-left: 19vh;
+      }
+      .logo .blurred {
+        position: absolute;
+        height: 13vh;
+        filter: blur(2vh);
+        z-index: 0;
+      }
+      
+      .logo .original {
+        position: relative;
+        height: 13vh;
+        z-index: 1;
+        filter: invert();
+      }
+    
+      .client-view {
+        width: 90%;
+        font-size: 3vh;
+      }
+      .client-view select, textarea, input {
+        font-size: 2vh;
+        background-color: rgba(0, 0, 0, 0.092);
+        padding: 1vh;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 2vh;
+      }
+      .custom-checkbox + .custom-checkbox-label {
+        font-size: 3vh;
+      }
+    }
     
     @media (max-width: 431px) {
       .main{
@@ -151,6 +239,17 @@
     
       .client-view {
         width: 90%;
+        font-size: 3vh;
+      }
+      .client-view select, textarea, input {
+        font-size: 2vh;
+        background-color: rgba(0, 0, 0, 0.092);
+        padding: 1vh;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 2vh;
+      }
+      .custom-checkbox + .custom-checkbox-label {
+        font-size: 3vh;
       }
     }
     
