@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import jwt from 'jsonwebtoken';
 import "../../../public/css/dashb.css";
+import "../../../public/css/responsiveDB.css";
 import Modal from '../../components/Modal';
 
 function Dashboard() {

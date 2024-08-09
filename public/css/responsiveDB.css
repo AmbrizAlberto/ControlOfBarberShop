@@ -1,0 +1,331 @@
+  /* Medias para hacer responsive */
+  /* Media Query para pantallas con ancho máximo de 1024px (sin restricción de altura) */
+  @media (max-width: 1024px) {}
+    
+    @media (max-width: 912px) {}
+    
+    /* Media Query para pantallas con ancho máximo de 912px */
+    @media (max-width: 820px) {
+        .main{
+            display: block;
+            border: none;
+            background-color: transparent;        
+            box-shadow: none;
+        }
+        .Left{
+            position: relative;
+            width: 100%;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+            margin-bottom: 5vh;
+            background-color: rgb(212, 212, 212);
+            border-radius: 3vh;
+        }
+        .Right{
+            width: 150%;
+            border-radius: 3vh;
+        }
+        .citaslist {
+            padding: 0;
+        }
+        .ListContainer h1{
+            padding-left: 2vh;
+            text-align: left;
+        }
+        .Right{
+            background-color: rgb(212, 212, 212);
+            padding: 1vh;
+            width: 80vh;
+            padding-bottom: 0;
+            border-radius: 2vh;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+        
+        }
+    }
+    
+    /* iPad Mini */
+    @media (max-width: 768px) {
+        .main{
+            display: block;
+            border: none;
+            background-color: transparent;        
+            box-shadow: none;
+        }
+        .Left{
+            position: relative;
+            width: 100%;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+            margin-bottom: 5vh;
+            background-color: rgb(212, 212, 212);
+            border-radius: 3vh;
+        }
+        .Right{
+            width: 150%;
+            border-radius: 3vh;
+        }
+        .citaslist {
+            padding: 0;
+        }
+        .ListContainer h1{
+            padding-left: 2vh;
+            text-align: left;
+        }
+        .Right{
+            background-color: rgb(212, 212, 212);
+            padding: 1vh;
+            width: 80vh;
+            padding-bottom: 0;
+            border-radius: 2vh;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+        
+        }
+    }
+
+    @media (max-width: 540px) {
+        .main{
+            display: block;
+            border: none;
+            background-color: transparent;        
+            box-shadow: none;
+        }
+        .Left{
+            position: relative;
+            width: 100%;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+            margin-bottom: 5vh;
+            background-color: rgb(212, 212, 212);
+            border-radius: 3vh;
+        }
+        .Right{
+            width: 150%;
+            border-radius: 3vh;
+        }
+        .citaslist {
+            padding: 0;
+        }
+        .ListContainer h1{
+            padding-left: 2vh;
+            text-align: left;
+        }
+        .Right{
+            background-color: rgb(212, 212, 212);
+            padding: 1vh;
+            width: 80vh;
+            padding-bottom: 0;
+            border-radius: 2vh;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+        
+        }
+    }
+
+    @media (max-width: 376px) {
+        .main{
+            display: block;
+            border: none;
+            background-color: transparent;        
+            box-shadow: none;
+        }
+        .Left{
+            position: relative;
+            width: 100%;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+            margin-bottom: 5vh;
+            background-color: rgb(212, 212, 212);
+            border-radius: 3vh;
+        }
+        .Right{
+            width: 150%;
+            border-radius: 3vh;
+        }
+        .citaslist {
+            padding: 0;
+        }
+        .ListContainer h1{
+            padding-left: 2vh;
+            text-align: left;
+        }
+        .Right{
+            background-color: rgb(212, 212, 212);
+            padding: 1vh;
+            width: 80vh;
+            padding-bottom: 0;
+            border-radius: 2vh;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+        
+        }
+    }
+
+    @media (max-width: 431px) {
+        .main{
+            display: block;
+            border: none;
+            background-color: transparent;        
+            box-shadow: none;
+        }
+        .Left{
+            position: relative;
+            width: 100%;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+            margin-bottom: 5vh;
+            background-color: rgb(212, 212, 212);
+            border-radius: 3vh;
+        }
+        .Right{
+            width: 150%;
+            border-radius: 3vh;
+        }
+        .citaslist {
+            padding: 0;
+        }
+        .ListContainer h1{
+            padding-left: 2vh;
+            text-align: left;
+        }
+        .Right{
+            background-color: rgb(212, 212, 212);
+            padding: 1vh;
+            width: 80vh;
+            padding-bottom: 0;
+            border-radius: 2vh;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+        
+        }
+    }
+
+    @media (max-width: 415px) {}
+        
+    @media (max-width: 412px) {
+        .main{
+            display: block;
+            border: none;
+            background-color: transparent;        
+            box-shadow: none;
+        }
+        .Left{
+            position: relative;
+            width: 100%;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+            margin-bottom: 5vh;
+            background-color: rgb(212, 212, 212);
+            border-radius: 3vh;
+        }
+        .Right{
+            width: 150%;
+            border-radius: 3vh;
+        }
+        .citaslist {
+            padding: 0;
+        }
+        .ListContainer h1{
+            padding-left: 2vh;
+            text-align: left;
+        }
+        .Right{
+            background-color: rgb(212, 212, 212);
+            padding: 1vh;
+            width: 80vh;
+            padding-bottom: 0;
+            border-radius: 2vh;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+        
+        }
+    }
+    
+    @media (max-width: 376px) {
+        .main{
+            display: block;
+            border: none;
+            background-color: transparent;        
+            box-shadow: none;
+        }
+        .Left{
+            position: relative;
+            width: 100%;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+            margin-bottom: 5vh;
+            background-color: rgb(212, 212, 212);
+            border-radius: 3vh;
+        }
+        .Right{
+            width: 150%;
+            border-radius: 3vh;
+        }
+        .citaslist {
+            padding: 0;
+        }
+        .ListContainer h1{
+            padding-left: 2vh;
+            text-align: left;
+        }
+        .Right{
+            background-color: rgb(212, 212, 212);
+            padding: 1vh;
+            width: 80vh;
+            padding-bottom: 0;
+            border-radius: 2vh;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+        
+        }
+    }
+    
+    @media (max-width: 361px) {
+        .main{
+            display: block;
+            border: none;
+            background-color: transparent;        
+            box-shadow: none;
+        }
+        .Left{
+            position: relative;
+            width: 100%;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+            margin-bottom: 5vh;
+            background-color: rgb(212, 212, 212);
+            border-radius: 3vh;
+        }
+        .Right{
+            width: 150%;
+            border-radius: 3vh;
+        }
+        .citaslist {
+            padding: 0;
+        }
+        .ListContainer h1{
+            padding-left: 2vh;
+            text-align: left;
+        }
+        .Right{
+            background-color: rgb(212, 212, 212);
+            padding: 1vh;
+            width: 80vh;
+            padding-bottom: 0;
+            border-radius: 2vh;
+            border: .2vh solid black;        
+            box-shadow: 0 0 3vh black;
+        
+        }
+    }
+    
+    /*//////////////////////  Responsivo para Post   ///////////////////////////////////*/
+    
+    /* Media Queries para Responsividad */
+    
+    /* Pantallas grandes (más de 1200px) */
+    @media (max-width: 1200px) {}
+    
+    /* Móviles (menos de 768px) */
+    @media (max-width: 480px) {}
