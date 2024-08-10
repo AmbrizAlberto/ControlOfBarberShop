@@ -10,7 +10,7 @@ const secret = 'your-secret-key'; // Usa la misma clave secreta aquí
 export async function POST(req) {
   const { username, password } = await req.json();
 
-  const user = await prisma.user.findUnique({ where: { username } });
+  const user = await prisma.userada.findUnique({ where: { username } });
 
   if (!user || !(await bcrypt.compare(password, user.password))) {
     console.log("No le atino");
