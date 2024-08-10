@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 import "../../../public/css/dashb.css";
 import "../../../public/css/responsiveDB.css";
 import Modal from '../../components/Modal';
-import Clock from '../components/clock';
+import Clock from '../components/Clock';
 
 function Dashboard() {
 
