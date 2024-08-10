@@ -33,3 +33,19 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
+
+export async function DELETE(request) {
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+
+  try {
+    const deletedNews = await prisma.news.delete({
+      where: { id: parseInt(id, 10) },
+    });
+
+    return NextResponse.json(deletedNews);
+  } catch (error) {
+    console.error('Error eliminando la noticia:', error);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
+}
