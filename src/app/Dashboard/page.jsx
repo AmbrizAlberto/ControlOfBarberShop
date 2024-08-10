@@ -1,4 +1,4 @@
-/* src/app/Dashboard/page.jsx */
+/* src/app/dashboard/page.jsx */
 
 'use client';
 
@@ -27,6 +27,8 @@ function Dashboard() {
   const [description, setDescription] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+  const [news, setNews] = useState([]);  // Estado para las noticias
+  const [newsToDelete, setNewsToDelete] = useState(null); // Noticia a eliminar
 
   const handleCreateNews = async () => {
     try {
@@ -124,6 +126,36 @@ function Dashboard() {
     document.body.classList.remove('html'); // Por ejemplo, si 'mainlg' es una clase específica del login
   }, []);
 
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await fetch('/api/noticias');
+        const newsData = await res.json();
+        setNews(newsData);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      }
+    };
+
+    fetchNews();
+  }, [authorized]);
+
+  const deleteNews = async (id) => {
+    try {
+      const res = await fetch(`/api/noticias/${id}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        setNews(news.filter(notice => notice.id !== id));  // Actualiza el estado eliminando la noticia
+        setShowModal(false); // Cierra el modal después de eliminar
+      } else {
+        console.error('Error eliminando la noticia:', await res.json());
+      }
+    } catch (error) {
+      console.error('Error eliminando la noticia:', error);
+    }
+  };
+
   return (
     <div className='main'>
       <Clock />
@@ -218,6 +250,42 @@ function Dashboard() {
                       type="button"
                       onClick={async () => {
                         await deleteCita(cita.id);
+                      }}
+                      className="btndeletecita"
+                    >
+                      Borrar
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className='ListContainer'>
+          <h1>Lista de Noticias</h1>
+          <table className='citasTable'>
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Fin</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {news.map((notice) => (
+                <tr key={notice.id}>
+                  <td>{notice.title}</td>
+                  <td>{notice.description}</td>
+                  <td>{new Date(notice.startDate).toLocaleDateString()}</td>
+                  <td>{new Date(notice.endDate).toLocaleDateString()}</td>
+                  <td>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setNewsToDelete(notice.id);
+                        setShowModal(true);
                       }}
                       className="btndeletecita"
                     >
