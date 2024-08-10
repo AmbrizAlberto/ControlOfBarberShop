@@ -4,9 +4,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Modal from './components/Modal';
-import "../../public/css/client.css"
-import "../../public/css/checkboxclient.css"
-import "../../public/css/responsiveCV.css"
+import "../../public/css/client.css";
+import "../../public/css/checkboxclient.css";
+import "../../public/css/responsiveCV.css";
 
 function ClientView() {
   const [clientName, setClientName] = useState('');
@@ -22,7 +22,6 @@ function ClientView() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-
     const fetchCitas = async () => {
       try {
         const res = await fetch('/api/citas');
@@ -80,7 +79,6 @@ function ClientView() {
     fetchNews();
   }, []);
 
-
   const handleCorteSpecificServiceChange = (e) => {
     const selectedSpecificService = e.target.value;
     if (selectedSpecificService === 'fade') {
@@ -136,24 +134,36 @@ function ClientView() {
     window.location.reload(); // Esto debería manejarse de otra forma más elegante en una aplicación real
   };
 
+  const startDate = new Date(date);
+  console.log('Fecha de inicio:', startDate);
+
+  const [hours, minutes] = time.split(':').map(Number);
+  startDate.setHours(hours, minutes);
+
   const handleSubmit = async () => {
     setError('');
     try {
       if (!clientName || !date || services.length === 0 || !time) {
         throw new Error('Por favor, completa todos los campos obligatorios.');
       }
-
+  
+      const localDate = new Date(date);
+      const [hours, minutes] = time.split(':').map(Number);
+      localDate.setHours(hours, minutes);
+  
+      console.log('Fecha y hora localDate:', localDate);
+  
       const newAppointment = {
         clientName,
-        date: new Date(date).toISOString(),
+        date: localDate.toISOString(), // Convertir a ISO string
         services,
         specificServices,
         time,
         message,
       };
-
+  
       console.log('Enviando solicitud POST a la api con los siguientes datos:', newAppointment);
-
+  
       const res = await fetch('/api/citas', {
         method: 'POST',
         body: JSON.stringify(newAppointment),
@@ -161,15 +171,15 @@ function ClientView() {
           'Content-Type': 'application/json',
         },
       });
-
+  
       if (!res.ok) {
         const errorData = await res.json();
         throw new Error(errorData.error || 'Error al crear la cita');
       }
-
+  
       const data = await res.json();
       console.log('Respuesta del servidor:', data);
-
+  
       setModalMessage('Tu cita ha sido agendada con éxito.');
       setShowModal(true);
     } catch (error) {
@@ -177,6 +187,9 @@ function ClientView() {
       console.error('Error al crear la cita:', error);
     }
   };
+  
+  
+  
 
   const today = new Date().toISOString().split('T')[0];
 
@@ -184,9 +197,9 @@ function ClientView() {
   const handleRayitosAlert = () => {
     if (services.includes('rayitos')) {
       alert("Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas. Tel. 315 100 12 42");
-      window.location.reload(); 
     }
   };
+
 
   return (
     <div >

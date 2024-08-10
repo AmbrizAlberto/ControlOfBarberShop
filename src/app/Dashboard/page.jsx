@@ -8,6 +8,7 @@ import jwt from 'jsonwebtoken';
 import "../../../public/css/dashb.css";
 import "../../../public/css/responsiveDB.css";
 import Modal from '../../components/Modal';
+import Clock from '../components/clock';
 
 function Dashboard() {
 
@@ -78,19 +79,6 @@ function Dashboard() {
     }
   }, []);
 
-  const fetchCitas = async () => {
-    try {
-      const res = await fetch('/api/citas');
-      const citasData = await res.json();
-      setCitas(citasData);
-    } catch (error) {
-      console.error('Error buscando citas:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchCitas();
-  }, [authorized]);
 
   const deleteCita = async (id) => {
     try {
@@ -121,9 +109,28 @@ function Dashboard() {
     router.push('/Login'); // Redirige al login
   };
 
+  useEffect(() => {
+    const today = new Date().toISOString().slice(0, 10);
+    setSelectedDate(today);
+  }, []);
+
+  const fetchCitas = async () => {
+    try {
+      const res = await fetch('/api/citas');
+      const citasData = await res.json();
+      setCitas(citasData);
+    } catch (error) {
+      console.error('Error buscando citas:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCitas();
+  }, [authorized]);
 
   return (
     <div className='main'>
+      <Clock />
       <Modal
         show={showModal}
         onClose={() => setShowModal(false)}

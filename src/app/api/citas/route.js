@@ -19,6 +19,13 @@ export async function POST(request) {
 
     console.log('Datos recibidos route.js:', { clientName, date, services, specificServices, time, message });
 
+    // Parse de la fecha y hora recibidas
+    const receivedDate = new Date(date);
+    const [hours, minutes] = time.split(':').map(Number);
+    receivedDate.setHours(hours, minutes);
+
+    console.log('Fecha recibida:', receivedDate);
+
     // Calcular la duración de la cita basada en los servicios seleccionados
     let duration = 0;
     if (services.includes('corte')) {
@@ -46,26 +53,6 @@ export async function POST(request) {
     }
     if (services.includes('rayitos')) {
       duration += 240;
-
-      // Verificar si se seleccionó "rayitos" y la duración excede el horario disponible
-      const startBusinessHours = new Date(date);
-      startBusinessHours.setHours(17, 0, 0); // 17:00
-
-      const endBusinessHours = new Date(date);
-      endBusinessHours.setHours(20, 30, 0); // 20:30
-
-      const startDate = new Date(date);
-      const [hours, minutes] = time.split(':').map(Number);
-      startDate.setHours(hours, minutes);
-
-      const endDate = new Date(startDate);
-      endDate.setMinutes(endDate.getMinutes() + duration);
-
-      if (endDate > endBusinessHours) {
-        return NextResponse.json({
-          error: "Se recomienda hacer llamada telefónica para asegurar la cita de 'Rayitos' ya que el tiempo del servicio es de 4 horas. Tel. 315 100 12 42"
-        });
-      }
     }
     if (services.includes('maquillaje')) {
       duration += 60;
@@ -79,11 +66,8 @@ export async function POST(request) {
       throw new Error('Duración inválida para los servicios seleccionados');
     }
 
-    // Calcular fecha y hora de inicio y fin de la cita
-    const startDate = new Date(date);
-    const [hours, minutes] = time.split(':').map(Number);
-    startDate.setHours(hours, minutes);
-
+    // Calcular la fecha y hora de inicio y fin de la cita
+    const startDate = new Date(receivedDate);
     const endDate = new Date(startDate);
     endDate.setMinutes(endDate.getMinutes() + duration);
 
@@ -119,7 +103,7 @@ export async function POST(request) {
     if (overlappingAppointments.length > 0) {
       return NextResponse.json({ error: 'Horario no disponible' }, { status: 400 });
     }
-
+    
     // Crear la nueva cita en la base de datos
     const newAppointment = await prisma.cita.create({
       data: {
