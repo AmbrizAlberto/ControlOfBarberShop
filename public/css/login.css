@@ -5,11 +5,19 @@ html{
   height: 100%;
   font-family: "Roboto", sans-serif;
   background-color: white;
+}
+
+
+.loginhtml{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
   background-image: url("/bgclient.jpeg");
   background-size: cover;
   background-position: center;
 }
-
 
 /* LOGO */
 .logo {

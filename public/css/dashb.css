@@ -83,8 +83,10 @@ html{
 }
 
 .filtro label {
+  color: black;
   display: block;
   margin-bottom: .6vh;
+  margin-top: 0;
 }
 
 .filtro input,

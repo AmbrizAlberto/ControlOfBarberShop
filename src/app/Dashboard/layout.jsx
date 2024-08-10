@@ -3,6 +3,7 @@
 'use client';
 import Head from 'next/head';
 import React from 'react';
+import "../../../public/css/dashb.css";
 
 export default function RootLayout1({ children }) {
 

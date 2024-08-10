@@ -3,6 +3,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import RootLayout1 from './layout';
 import { useRouter } from 'next/navigation';
 import jwt from 'jsonwebtoken';
 import "../../../public/css/dashb.css";
@@ -71,15 +72,6 @@ function Dashboard() {
     setLoading(false);
   }, [router]);
 
-  useEffect(() => {
-    const hasReloaded = localStorage.getItem('hasReloaded');
-    if (!hasReloaded) {
-      localStorage.setItem('hasReloaded', 'true');
-      window.location.reload();
-    }
-  }, []);
-
-
   const deleteCita = async (id) => {
     try {
       const res = await fetch(`/api/citas/${id}`, {
@@ -105,7 +97,6 @@ function Dashboard() {
 
   const handleLogout = () => {
     localStorage.removeItem('token'); // Elimina el token del localStorage
-    localStorage.removeItem('hasReloaded'); // Elimina la marca de recarga para futuros inicios de sesión
     router.push('/Login'); // Redirige al login
   };
 
@@ -127,6 +118,11 @@ function Dashboard() {
   useEffect(() => {
     fetchCitas();
   }, [authorized]);
+
+  useEffect(() => {
+    // Quita las clases o estilos específicos del login cuando el dashboard se monta
+    document.body.classList.remove('html'); // Por ejemplo, si 'mainlg' es una clase específica del login
+  }, []);
 
   return (
     <div className='main'>
