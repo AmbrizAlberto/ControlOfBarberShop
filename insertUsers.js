@@ -6,7 +6,7 @@ const saltRounds = 10;
 
 async function insertUsers() {
   const users = [
-    { username: 'Ada', password: 'esteticamatiz' },
+    { username: 'Admin', password: 'BarberShop' },
     // Agrega más usuarios según sea necesario
   ];
 
