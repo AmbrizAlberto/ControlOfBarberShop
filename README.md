@@ -5,5 +5,5 @@ Agenda tu cita para un salon de belleza con esta web.
 
 ## For Login
 Username: Admin
-Pass: BarbeerShop
+Pass: BarberShop
 
