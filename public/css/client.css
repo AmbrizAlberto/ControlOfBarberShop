@@ -101,7 +101,7 @@ html {
     height: auto; /* Cambiado a auto para permitir la expansión dinámica */
     border-top-left-radius: 3vh;
     border-bottom-left-radius: 3vh;
-    background-image: url("/bgclient.jpeg");
+    background-image: url("/barberbg.jpeg");
     background-size: cover;
     background-position: center;
     box-shadow: 4vh 0vh 4vh -1vh rgba(0, 0, 0, 0.318);
