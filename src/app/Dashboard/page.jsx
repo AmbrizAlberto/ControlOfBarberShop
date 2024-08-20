@@ -241,7 +241,7 @@ function Dashboard() {
               {filteredCitas.map((cita) => (
                 <tr key={cita.id}>
                   <td>{cita.clientName}</td>
-                  <td>{new Date(cita.date).toLocaleString()}</td>
+                  <td>{new Date(cita.date).toLocaleString('es-MX', { timeZone: 'Atlantic/Reykjavik' })}</td>
                   <td>{cita.services.join(', ')}</td>
                   <td>{cita.duration} minutos</td>
                   <td>{cita.message}</td>
