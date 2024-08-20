@@ -25,7 +25,7 @@ function Login() {
     const data = await res.json();
     if (data.success) {
       localStorage.setItem('token', data.token); 
-      router.push('/dashboard'); 
+      router.push('/Dashboard'); 
     } else {
       alert('Error: Usuario o contraseña incorrectos');
     }
